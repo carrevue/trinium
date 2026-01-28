@@ -1,40 +1,9 @@
-.container.version .section .content-box .grid,
+// uhhh... this should be cleaned up later
+
 .container.edit .section .content-box .grid {
     align-items: center;
 }
 
 .img-version {
-    width: 350px;
-}
-
-.col-version {
-    @include responsive('tiny') {
-        text-align: center;
-        border-bottom: 1px solid $content-box-border-color;
-        padding: 2em;
-    }
-
-    @include responsive('medium') {
-        border-bottom: none;
-        padding: 0;
-    }
-}
-
-.version-box {
-    @include responsive('tiny') {
-        flex-direction: column;
-        gap: 2em;
-    }
-
-    @include responsive('medium') {
-        flex-direction: row;
-        gap: 2em;
-    }
-
-    display: flex;
-    align-items: center;
-
-    .col-img {
-        flex-grow: 1;
-    }
+    height: 3em;
 }
