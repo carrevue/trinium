@@ -73,6 +73,12 @@
 .button {
     @include button();
 
+    @each $color, $value in $color-map {
+        &.#{$color} {
+            @include button-variant($value);
+        }
+    }
+
     &:hover {
         text-decoration: none;
     }
@@ -100,7 +106,7 @@
         }
     }
 
-    &.button-small {
+    &.small {
         font-size: 0.9em;
 
         @if $theme =="flat" {
@@ -112,13 +118,13 @@
         }
     }
 
-    &.button-big {
+    &.big {
         font-size: 15px;
         padding: 9px 15px;
         border-radius: 5px;
     }
 
-    &.button-huge {
+    &.huge {
         font-size: 24px;
         padding: 1rem 1.5rem;
         border-radius: 7px;
@@ -136,12 +142,6 @@
         @include responsive('medium') {
             width: inherit;
         }
-    }
-}
-
-@each $color, $value in $color-map {
-    .button-#{$color} {
-        @include button-variant($value);
     }
 }
 

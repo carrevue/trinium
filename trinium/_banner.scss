@@ -1,5 +1,31 @@
 @use "sass:color";
 
+@mixin banner-variant($value) {
+    $border-color: color.adjust($value, $lightness: -7.5%);
+
+    @if $color-scheme =="dark" {
+        $border-color: color.adjust($value, $lightness: 10%);
+    }
+
+    color: contrast-color($value, #000, #fff);
+
+    @if $theme =="default" {
+        background-color: color.adjust($value, $lightness: 10%);
+        background-image: linear-gradient(color.adjust($value, $lightness: 2.5%),
+                color.adjust(color.adjust($value, $lightness: -2%), $hue: 1deg));
+        border: 1px solid $border-color;
+    }
+
+    @else {
+        background-color: $value;
+    }
+
+    a {
+        text-decoration: underline;
+        color: contrast-color($value, #000, rgba(white, 0.7));
+    }
+}
+
 .banner {
     padding: 0.5rem 0.8rem;
     display: flex;
@@ -7,6 +33,12 @@
     border-radius: 4px;
     margin-bottom: 0.5em;
     gap: 0.75em;
+
+    @each $color, $value in $color-map {
+        &.#{$color} {
+            @include banner-variant($value);
+        }
+    }
 
     @if $theme =="default" {
         background-repeat: repeat-x;
@@ -18,34 +50,6 @@
 
         .banner-text {
             margin: auto;
-        }
-    }
-}
-
-@each $color, $value in $color-map {
-    .banner-#{$color} {
-        $border-color: color.adjust($value, $lightness: -7.5%);
-
-        @if $color-scheme =="dark" {
-            $border-color: color.adjust($value, $lightness: 10%);
-        }
-
-        color: contrast-color($value, #000, #fff);
-
-        @if $theme =="default" {
-            background-color: color.adjust($value, $lightness: 10%);
-            background-image: linear-gradient(color.adjust($value, $lightness: 2.5%),
-                    color.adjust(color.adjust($value, $lightness: -2%), $hue: 1deg));
-            border: 1px solid $border-color;
-        }
-
-        @else {
-            background-color: $value;
-        }
-
-        a {
-            text-decoration: underline;
-            color: contrast-color($value, #000, rgba(white, 0.7));
         }
     }
 }
