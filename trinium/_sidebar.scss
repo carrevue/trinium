@@ -157,7 +157,7 @@
                 padding: $menu-item-padding;
                 color: rgba($header-link-color, 75%);
                 align-items: center;
-                gap: 0.4rem;
+                gap: 0.5rem;
 
                 &:hover {
                     background: $header-link-hover;
@@ -171,6 +171,10 @@
                     color: $header-link-color;
                     text-decoration: none;
                 }
+
+                //&.selected {
+                //    border-left: 0.25em solid var(--link-color);
+                //}
             }
         }
     }
