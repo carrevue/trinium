@@ -17,23 +17,28 @@
             padding: 2px 4px;
             display: flex;
 
-            &:hover {
+            &:hover:not(.active) {
                 @if $color-scheme =="dark" {
-                    background-color: rgba(color.adjust($bg-color, $lightness: 2.5%), 25%);
+                    background-color: rgba($content-box-background-color, 10%);
                 }
 
                 @else {
-                    background-color: rgba(color.adjust($bg-color, $lightness: -3.5%), 25%);
+                    background-color: rgba($content-box-background-color, 10%);
                 }
             }
 
-            &:active {
-                background-color: rgba($bg-color, 50%);
+            &:active:not(.active) {
+                @if $color-scheme =="dark" {
+                    background-color: rgba($content-box-background-color, 25%);
+                }
+
+                @else {
+                    background-color: rgba($content-box-background-color, 25%);
+                }
             }
 
             &.active {
                 color: $text-color;
-                background-color: $bg-color;
             }
         }
     }
@@ -77,7 +82,7 @@
     &.active {
         background-color: $content-box-background-color;
         border: 1px solid $content-box-border-color;
-        border-bottom: 1px solid #fff0;
+        border-bottom: none;
 
         @if $color-scheme =="dark" {
             color: white;

@@ -70,3 +70,7 @@ $gap: 1em;
         padding: 0;
     }
 }
+
+.page.no-padding .cluster {
+    border-top: none;
+}
