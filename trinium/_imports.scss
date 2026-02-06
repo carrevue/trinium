@@ -225,6 +225,10 @@ dialog {
         align-items: center;
         font-weight: bold;
 
+        .userlink-icon {
+            height: 16px;
+        }
+
         .userlink-handle {
             color: $text-color;
             opacity: 50%;
@@ -268,30 +272,31 @@ ul.unstyled-list {
     }
 }
 
-@import 'header';
+@import 'banner';
+@import 'buttons';
+@import 'comments';
+@import 'content_box';
 @import 'footer';
 @import 'forms';
-@import 'content_box';
-@import 'banner';
-@import 'comments';
-@import 'sections';
-@import 'buttons';
+@import 'header';
 @import 'jumbotron';
 @import 'menus';
-@import 'tabs';
-@import 'table';
-@import 'pagination';
-@import 'sidebar';
-@import 'text';
 @import 'navigation_bar';
+@import 'pagination';
+@import 'sections';
+@import 'sidebar';
+@import 'table';
+@import 'tabs';
+@import 'text';
+@import 'tooltips';
 
-@import 'watch_page';
-@import 'profile_page';
-@import 'login_register_page';
-@import 'version_page';
-@import 'setting_page';
-@import 'change_theme_page';
 @import 'admin_page';
+@import 'change_theme_page';
+@import 'login_register_page';
+@import 'profile_page';
+@import 'setting_page';
+@import 'version_page';
+@import 'watch_page';
 
 // goanna fixes
 .goanna {

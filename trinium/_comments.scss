@@ -20,6 +20,7 @@
 
         .comment-author {
             display: flex;
+            flex-wrap: wrap;
             align-items: center;
             gap: 0.25em;
             
@@ -44,6 +45,11 @@
                     margin-bottom: 0;
                 }
             }
+        }
+
+        .comment-actions {
+            display: flex;
+            gap: 0.5em;
         }
     }
 }
@@ -107,8 +113,8 @@
     margin-top: 1em;
 }
 
-.reply-button {
-    font-size: 0.75rem;
+.action-button {
+    font-size: 0.8em;
     cursor: pointer;
 }
 
