@@ -120,7 +120,7 @@
     background: $content-box-border-color;
     padding: 0.3em 0.5em;
     color: $text-color;
-    font-weight: bold;
+    font-weight: 700;
 }
 
 .content-box {
@@ -202,7 +202,7 @@
 
             .content-title {
                 font-size: 1em;
-                font-weight: bold;
+                font-weight: 700;
             }
 
             .content-title-upload {
@@ -220,7 +220,7 @@
                     min-width: 40px;
                 }
 
-                font-weight: bold;
+                font-weight: 700;
                 display: flex;
             }
 

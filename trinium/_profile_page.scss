@@ -71,7 +71,11 @@
             gap: 0.25em;
             align-items: center;
             font-size: 1.1em;
-            font-weight: 500;
+            font-weight: 700;
+        }
+
+        .profile-box-icon {
+            height: 16px;
         }
     }
 }
@@ -121,7 +125,7 @@
         }
 
         .detail-label {
-            //font-weight: bold;
+            //font-weight: 700;
         }
 
         .detail-value {
