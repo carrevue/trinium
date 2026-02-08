@@ -76,6 +76,8 @@
 
                     .jumbotron-welcome {
                         .jumbotron-slogan {
+                            line-height: 1.5em;
+
                             q {
                                 font-style: italic;
                                 font-synthesis: none; // fix emojis/unicode symbols
@@ -90,18 +92,18 @@
                             @include responsive('small') {
                                 display: flex;
                                 align-items: center; // looks FUCKED with center
-                                gap: 0.65rem;
+                                gap: 0.65em;
                             }
 
                             @include responsive('medium') {
                                 display: flex;
                                 align-items: center; // looks FUCKED with center
-                                gap: 0.65rem;
+                                gap: 0.65em;
                             }
 
                             span {
                                 font-family: "Caveat", cursive, sans-serif;
-                                font-size: 1.3rem;
+                                font-size: 1.5em;
                             }
                         }
                     }
@@ -111,7 +113,7 @@
 
         .jumbotron-welcome {
             flex-grow: 1;
-            line-height: 2em;
+            line-height: 2.5em;
         }
     }
 

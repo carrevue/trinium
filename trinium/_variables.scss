@@ -46,7 +46,7 @@ $color-map: (
 // header/sidebar
 //$header-background: $content-box-background-color;
 
-$header-background: linear-gradient(to bottom, #FFFFFF, #F3F3F3);
+$header-background: linear-gradient(to bottom, #FFFFFF, #F8F8F8);
 $header-border: $content-box-border-color;
 
 $header-link-hover: rgba($header-link-color, 0.05);
@@ -55,7 +55,7 @@ $header-link-inactive-opacity: 0.75;
 $header-link-active-opacity: 1; // includes hover
 
 @if $color-scheme =="dark" {
-    $header-background: linear-gradient(to bottom, #111, #0a0a0a);
+    $header-background: linear-gradient(to bottom, #111, #070707);
 }
 
 @if $theme =="flat" {
@@ -92,11 +92,9 @@ $header-pfp-width: 32px;
 
 // profile
 $pfp-width-profiles: 64px;
-$pfp-width-watch: 35px;
-$profile-intro-height: 90px;
 
 // menus
-$menu-item-padding: 0.4rem 0.8rem;
+$menu-item-padding: 0.5em 1em;
 
 // sidebar
 $sidebar-width-medium: 180px;

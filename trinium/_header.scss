@@ -68,26 +68,6 @@
     @if $theme =="default" {
         box-shadow: 0 1px 10px rgba(black, 0.05);
     }
-
-    // TEMPORARY
-    &.anniversary {
-        @if $color-scheme == "default" {
-            @if $theme == "default" {
-                background: linear-gradient(#0F4AC1, #15357D);
-            } @else {
-                background: #053596;
-            }
-            border-color: #002988;
-
-            .icon:not(.header-search .icon):not(.button-hamburger :hover), .header-links {
-                color: white;
-            }
-        }
-
-        .header-logo, .logo {
-            height: 40px;
-        }
-    }
 }
 
 .header-main-links {
