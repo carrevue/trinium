@@ -37,7 +37,7 @@
     @if $theme =="default" {
         border: 1px solid $border-color;
         background-image: linear-gradient(color.adjust($value, $lightness: 5%),
-                color.adjust(color.adjust($value, $lightness: -4%), $hue: 1deg));
+                color.adjust(color.adjust($value, $lightness: -5%), $hue: -1deg));
         text-shadow: 0 -1px 0 rgba($shadow-color, 0.4);
     }
 

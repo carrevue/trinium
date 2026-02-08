@@ -30,7 +30,7 @@
             font-size: 0.9em;
 
             .watch-box-below-title-featured {
-                background-image: linear-gradient($yellow, (color.adjust(color.adjust($yellow, $lightness: -5%), $hue: -3.5deg)));
+                background-image: linear-gradient($yellow, (color.adjust(color.adjust($yellow, $lightness: -2.5%), $hue: -1deg)));
                 color: transparent;
                 background-clip: text;
             }
