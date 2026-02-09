@@ -20,22 +20,6 @@
             @include maxwidths();
         }
 
-        /*
-        .header-button {
-            @include responsive('tiny') {
-                display: block;
-            }
-
-            @include responsive('small') {
-                display: block;
-            }
-
-            @include responsive('medium') {
-                display: none;
-            }
-        }
-        */
-
         .header-hidden-links {
             margin-right: 0.5em;
 

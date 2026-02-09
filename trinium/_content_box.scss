@@ -224,8 +224,16 @@
                 display: flex;
             }
 
-            .content-description {
+            .content-author, .content-info, .content-description {
                 font-size: 0.8em;
+            }
+
+            .content-description {
+                display: -webkit-box;
+                line-clamp: 4;
+                -webkit-line-clamp: 4;
+                -webkit-box-orient: vertical; // this is deprecated, but I Dont Care.
+                overflow: hidden;
             }
         }
 

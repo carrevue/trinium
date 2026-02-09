@@ -121,7 +121,7 @@
     }
 }
 
-.page.no-padding .sidebar {
+.page.no-padding .sidebar:not(.user-custom-profile) {
     margin-top: 1em;
 }
 

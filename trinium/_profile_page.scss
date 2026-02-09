@@ -125,12 +125,32 @@
         }
 
         .detail-label {
-            //font-weight: 700;
+            //font-weight: bold;
         }
 
         .detail-value {
             text-align: right;
-            //font-weight: 400;
         }
+    }
+}
+
+.profile-edit-container {
+    background: $header-background; // temporary
+    border-bottom: 1px $header-border; // temporary
+    width: 100%;
+    height: 48px;
+
+    position: absolute;
+    $header-height: 48px;
+
+    display: flex;
+    align-items: center;
+
+    .profile-edit {
+        margin: auto;
+        display: flex;
+        align-items: center;
+        gap: 0.5em;
+        @include maxwidths();
     }
 }
