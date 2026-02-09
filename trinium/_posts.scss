@@ -1,4 +1,4 @@
-.comment {
+.post {
     margin: 1em 0;
     display: flex;
     gap: 0.8em;
@@ -15,23 +15,23 @@
         height: 48px;
     }
 
-    .comment-body {
+    .post-body {
         flex: 1;
 
-        .comment-author {
+        .post-author {
             display: flex;
             flex-wrap: wrap;
             align-items: center;
             gap: 0.25em;
             
-            .comment-timestamp {
+            .post-timestamp {
                 color: $text-color;
                 opacity: 50%;
                 font-size: 0.8em;
             }
         }
 
-        .comment-contents {
+        .post-contents {
             //margin-top: 0.25em;
 
             p {
@@ -47,7 +47,7 @@
             }
         }
 
-        .comment-actions {
+        .post-actions {
             display: flex;
             gap: 0.5em;
         }
@@ -59,7 +59,7 @@
     padding-left: 1em;
     margin-top: 1em;
 
-    .comment,
+    .post,
     .reply-form {
         border: none;
 
@@ -70,15 +70,14 @@
     }
 }
 
-.new-comment,
+.new-post,
 .reply-form {
     display: flex;
     gap: 0.8em;
 
     &:not(:only-child) {
         &:not(:only-of-type) {
-            margin-bottom: 0.33em;
-            padding-bottom: 0.5em;
+            padding-bottom: 1em;
             border-bottom: 1px solid $content-box-border-color;
         }
 
@@ -101,7 +100,7 @@
     }
 
     /*
-    #comment_post_button,
+    #post_post_button,
     .submit-reply-button {
         margin-left: auto;
         display: block;
@@ -122,21 +121,22 @@
     display: none;
 }
 
+#new-post-form,
 #new-comment-form,
 .new-reply-form {
     flex: 1;
 }
 
-.new-comment-bottom {
+.new-post-bottom {
     display: flex;
     margin-bottom: 0.5em;
 }
 
-.comment-form-error {
+.post-form-error {
     flex-grow: 1;
 }
 
-#new-comment-button {
+#new-comment-button, #new-post-button {
     background: $form-bg-color;
     color: $form-text-color;
     border: 1px solid $form-border-color;
@@ -148,7 +148,7 @@
     flex: 1; // webkit hack
 }
 
-.new-comment-buttons {
+.new-post-buttons {
     display: flex;
     gap: 0.2em;
 }

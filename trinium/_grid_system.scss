@@ -83,7 +83,7 @@ $gap: 1em;
         padding: 0;
 
         // kind of ugly ?
-        .content-entry, .content-entry:first-child, .content-entry:last-child, .comment {
+        .content-entry, .content-entry:first-child, .content-entry:last-child, .post, .new-post {
             padding: $content-box-padding;
             margin: 0;
         }
