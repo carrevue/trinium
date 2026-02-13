@@ -23,6 +23,12 @@
             flex-wrap: wrap;
             align-items: center;
             gap: 0.25em;
+
+            .comment-owner {
+                background: $content-box-border-color;
+                border-radius: 4px;
+                padding: 0 2px;
+            }
             
             .post-timestamp {
                 color: $text-color;
