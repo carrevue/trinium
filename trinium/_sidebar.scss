@@ -152,8 +152,12 @@
         .list-link {
             .list-link-profile-picture {
                 display: inline-block;
-                width: 18px;
-                height: 18px;
+                width: 20px;
+                height: 20px;
+
+                @if $theme =="default" {
+                    border-radius: 2px;
+                }
             }
 
             a {
