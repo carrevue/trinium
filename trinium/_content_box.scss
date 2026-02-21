@@ -130,7 +130,7 @@
     overflow: hidden;
     word-break: break-word;
 
-    border-radius: 4px;
+    border-radius: $content-box-border-radius;
 
     @include scrollbar();
 

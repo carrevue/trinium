@@ -2,11 +2,15 @@
     text-align: center;
     background: $content-box-background-color;
     border: 1px solid $content-box-border-color;
-    border-bottom: none;
+    border-radius: $content-box-border-radius;
 
     .img-upload {
         padding: 1rem;
         filter: drop-shadow(0 2px 2px rgba(black, 0.25));
+    }
+
+    .plyr {
+        border-radius: $content-box-border-radius;
     }
 }
 
@@ -14,6 +18,7 @@
     background: $content-box-background-color;
     border: 1px solid $content-box-border-color;
     padding: $content-box-padding;
+    border-radius: $content-box-border-radius;
     overflow: hidden;
     word-break: break-word;
 

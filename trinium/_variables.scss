@@ -42,6 +42,11 @@ $content-box-border-color: #E0E0E0;
 }
 
 $content-box-padding: 1em;
+$content-box-border-radius: 4px;
+
+@if $theme == "flat" {
+    $content-box-border-radius: 0.5em;
+}
 
 // content box grid entries
 $content-box-grid-entry-height: 220px;
