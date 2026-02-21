@@ -18,7 +18,7 @@
             display: flex;
 
             &:hover:not(.active) {
-                @if $color-scheme =="dark" {
+                @if $color-scheme == "dark" {
                     background-color: rgba($content-box-background-color, 10%);
                 }
 
@@ -28,7 +28,7 @@
             }
 
             &:active:not(.active) {
-                @if $color-scheme =="dark" {
+                @if $color-scheme == "dark" {
                     background-color: rgba($content-box-background-color, 25%);
                 }
 
@@ -84,7 +84,7 @@
         border: 1px solid $content-box-border-color;
         border-bottom: none;
 
-        @if $color-scheme =="dark" {
+        @if $color-scheme == "dark" {
             color: white;
         }
 
@@ -92,7 +92,9 @@
             color: black;
         }
 
-        font-weight: 700;
+        @if $theme != "flat" {
+            font-weight: 700;
+        }
     }
 
     &:focus {

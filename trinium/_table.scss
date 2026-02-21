@@ -15,7 +15,7 @@ table.styled {
         background: $content-box-background-color;
 
         &.table-header {
-            @if $theme =="default" {
+            @if $theme == "default" {
                 background: color.adjust($content-box-border-color, $lightness: 5%);
                 background-image: linear-gradient(color.adjust($content-box-border-color, $lightness: 7.5%),
                         color.adjust($content-box-border-color, $lightness: 2.5%));

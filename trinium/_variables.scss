@@ -6,20 +6,39 @@ $link-color: #0069B4; // #006FFF;
 $bg-color: #F2F2F2;
 $header-link-color: black;
 
-@if $color-scheme =="dark" {
+@if $theme == "flat" {
+    $bg-color: #FFFFFF;
+    $text-color: #2C2F32;
+    $link-color: #0087FE;
+}
+
+@if $color-scheme == "dark" {
     $text-color: white;
     $link-color: #2d89e8;
     $bg-color: #050505;
     $header-link-color: white;
+
+    @if $theme == "flat" {
+        $bg-color: #010103;
+    }
 }
 
 // content boxes
 $content-box-background-color: #FFF;
 $content-box-border-color: #E0E0E0;
 
-@if $color-scheme =="dark" {
-    $content-box-background-color: #0a0a0a;
-    $content-box-border-color: #2a2a2a;
+@if $theme == "flat" {
+    $content-box-border-color: #E2E5E7;
+}
+
+@if $color-scheme == "dark" {
+    $content-box-background-color: #010101;
+    $content-box-border-color: #181818;
+
+    @if $theme == "flat" {
+        $content-box-background-color: #010103;
+        $content-box-border-color: #151a25;
+    }
 }
 
 $content-box-padding: 1em;
@@ -29,14 +48,22 @@ $content-box-grid-entry-height: 220px;
 $content-box-grid-entry-width: 135px;
 
 // component colors
-$primary: #0069B4;
+$accent: #0069B4;
 $secondary: $content-box-border-color;
 $green: #00A651;
 $red: #CB122E;
 $yellow: #FFBB00;
 
+@if $theme == "flat" {
+    $accent: #2C2F32;
+    $secondary: $content-box-border-color;
+    $green: #00A651;
+    $red: #E62845;
+    $yellow: #FFC900;
+}
+
 $color-map: (
-    "primary": $primary,
+    "accent": $accent,
     "secondary": $content-box-border-color,
     "success": $green,
     "danger": $red,
@@ -54,11 +81,11 @@ $header-link-active: rgba($header-link-color, 0.1);
 $header-link-inactive-opacity: 0.75;
 $header-link-active-opacity: 1; // includes hover
 
-@if $color-scheme =="dark" {
+@if $color-scheme == "dark" {
     $header-background: linear-gradient(to bottom, #111, #070707);
 }
 
-@if $theme =="flat" {
+@if $theme == "flat" {
     $header-background: $content-box-background-color;
     $header-border: $content-box-border-color;
 }
@@ -71,7 +98,7 @@ $form-border-color: $content-box-border-color;
 // fonts
 $font: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
-@if $theme =="flat" {
+@if $theme == "flat" {
     $font: Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
@@ -81,6 +108,7 @@ $breakpoints: (
     "small": 768px,
     "medium": 1024px,
     "large": 1280px,
+    "xlarge": 1366px,
     "huge": 1600px,
 );
 

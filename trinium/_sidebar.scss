@@ -128,16 +128,22 @@
 .hamburger,
 .sidebar {
     .list {
+        display: flex;
+        flex-direction: column;
         margin: 0;
         padding: 0;
         list-style: none;
+    
+        @if $theme == "flat" {
+            gap: 2px;
+        }
 
         .list-header {
             margin-top: 0.9em;
             display: block;
             padding: $menu-item-padding;
 
-            @if $theme =="default" {
+            @if $theme == "default" {
                 color: rgba($header-link-color, 66%);
                 text-transform: uppercase;
                 font-size: 0.8em;
@@ -155,7 +161,7 @@
                 width: 20px;
                 height: 20px;
 
-                @if $theme =="default" {
+                @if $theme == "default" {
                     border-radius: 2px;
                 }
             }
@@ -166,6 +172,10 @@
                 color: rgba($header-link-color, 75%);
                 align-items: center;
                 gap: 0.5em;
+
+                @if $theme == "flat" {
+                    border-radius: 0.5rem;
+                }
 
                 &:hover {
                     background: $header-link-hover;

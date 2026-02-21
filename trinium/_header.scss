@@ -49,7 +49,7 @@
     height: $header-height;
     display: flex;
 
-    @if $theme =="default" {
+    @if $theme == "default" {
         box-shadow: 0 1px 10px rgba(black, 0.05);
     }
 }
@@ -186,7 +186,7 @@
         background: none;
         border: none;
 
-        @if $color-scheme =="dark" {
+        @if $color-scheme == "dark" {
             color: white;
         }
 
@@ -254,7 +254,7 @@
     height: $header-height;
     padding: 0 0.5em;
 
-    @if $color-scheme =="dark" {
+    @if $color-scheme == "dark" {
         text-shadow: 0 1px 0 rgba(black, 0.25);
     }
 

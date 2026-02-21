@@ -14,7 +14,7 @@ body.login {
     .section-header {
         color: white;
 
-        @if $theme =="default" {
+        @if $theme == "default" {
             text-shadow: 0 0.1em 0.25em rgba(black, 0.75);
         }
     }

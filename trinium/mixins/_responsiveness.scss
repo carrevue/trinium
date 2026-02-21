@@ -32,6 +32,10 @@
     max-width: 1152px;
   }
 
+  @include responsive('xlarge') {
+    max-width: 1280px;
+  }
+
   @include responsive('huge') {
     max-width: 1440px;
   }
