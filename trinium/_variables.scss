@@ -65,7 +65,7 @@ $content-box-border-color: #E0E0E0;
 
 @if $color-scheme == "dark" {
     $content-box-background-color: #010101;
-    $content-box-border-color: #181818;
+    $content-box-border-color: #222222;
 
     @if $theme == "flat" {
         $content-box-background-color: #010103;

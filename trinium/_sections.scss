@@ -21,9 +21,9 @@
                     a:after {
                         font-weight: normal;
                         display: inline-block;
-                        content: ">";
-                        font-size: $font-size-smaller;
-                        padding: 0 3px 0 6px;
+                        content: "/";
+                        opacity: 50%;
+                        padding: 0 3px 0 9px;
                     }
                 }
 
