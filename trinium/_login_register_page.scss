@@ -9,6 +9,10 @@ body.login {
         height: calc(100vh - $header-height);
         justify-content: center;
         padding: 0 5em;
+
+        .page-login {
+            width: 500px;
+        }
     }
 
     .section-header {

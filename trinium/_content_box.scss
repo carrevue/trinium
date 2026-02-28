@@ -224,6 +224,10 @@
                 display: flex;
             }
 
+            .content-text {
+                font-size: $font-size-small;
+            }
+
             .content-author, .content-detail, .content-description {
                 font-size: $font-size-smaller;
             }
