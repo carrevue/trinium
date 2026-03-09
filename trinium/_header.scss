@@ -46,11 +46,13 @@
     background: $header-background;
     border-bottom: 1px solid $header-border;
 
+    color: $header-color;
+
     height: $header-height;
     display: flex;
 
     @if $theme == "default" {
-        box-shadow: 0 1px 10px rgba(black, 0.05);
+        box-shadow: 0 1px 10px rgba(black, 0.1);
     }
 }
 
@@ -186,7 +188,7 @@
         background: none;
         border: none;
 
-        @if $color-scheme == "dark" {
+        @if $theme == "default" or $color-scheme == "dark" {
             color: white;
         }
 
@@ -205,8 +207,17 @@
     }
 
     #header-search-input {
-        padding: 6px 8px;
+        padding: 6px 10px;
         height: 32px;
+
+        @if $theme == "default" {
+            border-radius: 16px;
+            transition: border 0.1s ease-in-out;
+            border: 1px solid black;
+            color: #eee;
+            background: #5A5A5A;
+            box-shadow: 0 1px 0 #333;
+        }
 
         &:focus {
             border-color: var(--link-color);
@@ -249,7 +260,7 @@
     display: flex;
     align-items: center;
     gap: 0.5em;
-    color: $header-link-color;
+    color: $header-color;
     opacity: $header-link-inactive-opacity;
     height: $header-height;
     padding: 0 0.5em;
@@ -302,6 +313,7 @@
 }
 
 .menu#user-menu {
+    color: $text-color;
     border-top: none;
     top: $header-height;
     border-radius: 0 0 8px 8px;

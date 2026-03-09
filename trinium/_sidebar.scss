@@ -1,6 +1,6 @@
 #hamburger {
-    background: $content-box-background-color;
-    border-right: 1px solid $content-box-border-color;
+    background: $mobile-sidebar-background;
+    border-right: 1px solid $mobile-sidebar-border;
 
     top: $header-height;
     left: -250px;
@@ -8,6 +8,10 @@
     z-index: 2000;
     padding: $content-box-padding 0;
     height: calc(100vh - $header-height);
+
+    @if $theme == "default" {
+        box-shadow: 1px 0 6px rgba(black, 0.15);
+    }
 
     @include responsive('tiny') {
         width: 200px;
@@ -144,7 +148,7 @@
             padding: $menu-item-padding;
 
             @if $theme == "default" {
-                color: rgba($header-link-color, 66%);
+                color: rgba($text-color, 66%);
                 text-transform: uppercase;
                 font-size: $font-size-smaller;
                 font-weight: 700;
@@ -169,7 +173,7 @@
             a {
                 display: flex;
                 padding: $menu-item-padding;
-                color: rgba($header-link-color, 75%);
+                color: rgba($text-color, 75%);
                 align-items: center;
                 gap: 0.5em;
 
@@ -179,20 +183,41 @@
 
                 &:hover {
                     background: $header-link-hover;
-                    color: $header-link-color;
+                    color: $text-color;
                     text-decoration: none;
                 }
 
                 &:active,
                 &.selected {
                     background: $header-link-active;
-                    color: $header-link-color;
+                    color: $text-color;
                     text-decoration: none;
                 }
 
                 //&.selected {
                 //    border-left: 0.25em solid var(--link-color);
                 //}
+            }
+        }
+    }
+}
+
+
+// awkward override for mobile sidebar on trinium default
+@if $theme == "default" {
+    .hamburger {
+        .list {
+            .list-header,
+            .list-link a {
+                color: rgba($header-color, 66%);
+            }
+
+            .list-link a {
+                &:hover,
+                &:active,
+                &.selected {
+                    color: $header-color;
+                }
             }
         }
     }

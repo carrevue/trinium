@@ -93,9 +93,10 @@ $button-padding-large: 0.75em 1.1em;
         text-decoration: none;
     }
 
-    &.button-hamburger {
+    &.hamburger {
         padding: 0;
         display: flex;
+        @include button-variant($header-border);
     }
 
     &.button-caret {

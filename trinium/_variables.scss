@@ -36,7 +36,6 @@ $font-size-h6: 11px;
 $text-color: black;
 $link-color: #0069B4; // #006FFF;
 $bg-color: #F2F2F2;
-$header-link-color: black;
 
 @if $theme == "flat" {
     $bg-color: #FFFFFF;
@@ -48,7 +47,6 @@ $header-link-color: black;
     $text-color: white;
     $link-color: #2d89e8;
     $bg-color: #050505;
-    $header-link-color: white;
 
     @if $theme == "flat" {
         $bg-color: #010103;
@@ -108,23 +106,25 @@ $color-map: (
 );
 
 // header/sidebar
-//$header-background: $content-box-background-color;
+$header-background: linear-gradient(to bottom, #333333, #151515);
+$header-border: #111111;
+$header-color: white;
 
-$header-background: linear-gradient(to bottom, #FFFFFF, #F8F8F8);
-$header-border: $content-box-border-color;
+$mobile-sidebar-background: #191919;
+$mobile-sidebar-border: #111111;
 
-$header-link-hover: rgba($header-link-color, 0.05);
-$header-link-active: rgba($header-link-color, 0.1);
+$header-link-hover: rgba($text-color, 0.05);
+$header-link-active: rgba($text-color, 0.1);
 $header-link-inactive-opacity: 0.75;
 $header-link-active-opacity: 1; // includes hover
-
-@if $color-scheme == "dark" {
-    $header-background: linear-gradient(to bottom, #151515, #070707);
-}
 
 @if $theme == "flat" {
     $header-background: $content-box-background-color;
     $header-border: $content-box-border-color;
+    $header-color: $text-color;
+
+    $mobile-sidebar-background: $content-box-background-color;
+    $mobile-sidebar-border: $content-box-border-color;
 }
 
 // forms
