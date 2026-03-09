@@ -11,7 +11,13 @@ body.login {
         padding: 0 5em;
 
         .page-login {
-            width: 500px;
+            width: 350px;
+
+            // ugh, the captcha.
+            // also this will be fucked on pale moon but i dont care for now
+            &:has(.register) {
+                width: 332px;
+            }
         }
     }
 

@@ -233,10 +233,10 @@
 
     @include responsive('medium') {
         display: block;
-        width: 360px;
+        width: 300px;
 
         #header-search-input {
-            width: 360px;
+            width: 300px;
         }
     }
 
@@ -344,7 +344,7 @@
     border-top: none;
     top: $header-height;
     border-radius: 0 0 8px 8px;
-    min-width: 300px;
+    min-width: 340px;
     padding: 1em;
 }
 
