@@ -135,22 +135,17 @@
 }
 
 .profile-edit-container {
-    background: $header-background; // temporary
-    border-bottom: 1px $header-border; // temporary
-    width: 100%;
-    height: 48px;
+    background: $bg-color;
+    box-shadow: inset 0 -7px 9px -7px rgba(black, 0.5);
 
-    position: absolute;
-    $header-height: 48px;
+    height: 180px;
+    max-height: 0px;
+    overflow: hidden;
+    position: relative;
 
-    display: flex;
-    align-items: center;
+    transition: max-height 0.66s;
 
     .profile-edit {
-        margin: auto;
-        display: flex;
-        align-items: center;
-        gap: 0.5em;
         @include maxwidths();
     }
 }

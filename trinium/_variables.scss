@@ -110,6 +110,8 @@ $header-background: linear-gradient(to bottom, #333333, #151515);
 $header-border: #111111;
 $header-color: white;
 
+$subheader-background: linear-gradient(to bottom, #222, #151515);
+
 $mobile-sidebar-background: #191919;
 $mobile-sidebar-border: #111111;
 
@@ -122,6 +124,8 @@ $header-link-active-opacity: 1; // includes hover
     $header-background: $content-box-background-color;
     $header-border: $content-box-border-color;
     $header-color: $text-color;
+
+    $subheader-background: $content-box-background-color;;
 
     $mobile-sidebar-background: $content-box-background-color;
     $mobile-sidebar-border: $content-box-border-color;
