@@ -64,7 +64,7 @@
     }
 
     .profile-box-info {
-        width: 100%;
+        flex-grow: 1;
 
         .profile-box-username {
             display: flex;
@@ -135,15 +135,19 @@
 }
 
 .profile-edit-container {
-    background: $bg-color;
-    box-shadow: inset 0 -7px 9px -7px rgba(black, 0.5);
+    @if $theme == "default" {
+        background: #262b32;
+        box-shadow: inset 0 -7px 9px -7px rgba(black, 0.5);
+    } @else {
+        background: $bg-color;
+    }
 
     height: 180px;
     max-height: 0px;
     overflow: hidden;
     position: relative;
 
-    transition: max-height 0.66s;
+    transition: max-height 0.66s cubic-bezier(.23,1,.32,1);
 
     .profile-edit {
         @include maxwidths();

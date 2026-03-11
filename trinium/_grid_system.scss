@@ -88,6 +88,14 @@ $gap: 1em;
             margin: 0;
         }
     }
+
+    .tabs {
+        margin-top: 0.5em;
+
+        &:first-child {
+            padding-left: 1em;
+        }
+    }
 }
 
 .page.no-padding .cluster {
