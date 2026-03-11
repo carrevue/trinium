@@ -7,41 +7,6 @@
 .tabs {
     border-bottom: 1px solid $content-box-border-color;
     display: flex;
-
-    &.homepage {
-        justify-content: flex-end;
-        border-bottom: none;
-
-        .tablink {
-            color: white;
-            padding: 2px 4px;
-            display: flex;
-
-            &:hover:not(.active) {
-                @if $color-scheme == "dark" {
-                    background-color: rgba($content-box-background-color, 10%);
-                }
-
-                @else {
-                    background-color: rgba($content-box-background-color, 10%);
-                }
-            }
-
-            &:active:not(.active) {
-                @if $color-scheme == "dark" {
-                    background-color: rgba($content-box-background-color, 25%);
-                }
-
-                @else {
-                    background-color: rgba($content-box-background-color, 25%);
-                }
-            }
-
-            &.active {
-                color: $text-color;
-            }
-        }
-    }
 }
 
 .tablink {
@@ -63,11 +28,23 @@
     @include responsive('small') {
         padding: 6px 16px;
         flex: none;
+        &.has-icon {
+            padding: 4.5px 14px 4.5px 12px
+        }
     }
 
     @include responsive('medium') {
         padding: 6px 16px;
         flex: none;
+        &.has-icon {
+            padding: 4.5px 14px 4.5px 12px
+        }
+    }
+
+    &.has-icon {
+        display: flex;
+        align-items: center;
+        gap: 4px;
     }
 
     &:hover {
