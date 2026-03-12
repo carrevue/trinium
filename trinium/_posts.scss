@@ -51,6 +51,16 @@
                     margin-bottom: 0;
                 }
             }
+
+            .post-attachment {
+                border: 1px solid $content-box-border-color;
+                border-radius: $content-box-border-radius;
+
+                width: 100%;
+                max-width: 510px;
+
+                max-height: 520px;
+            }
         }
 
         .post-actions {
