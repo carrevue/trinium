@@ -1,3 +1,21 @@
+@mixin header-button-hover {
+  @if $theme == "default" {
+    background: rgba(white, 0.075);
+    box-shadow: 0 6px 10px rgba(black, 0.25) inset;
+  } @else {
+    background: $header-link-hover;
+  }
+}
+
+@mixin header-button-active {
+  @if $theme == "default" {
+    background: rgba(white, 0.025);
+    box-shadow: 0 6px 10px rgba(black, 0.6) inset;
+  } @else {
+    background: $header-link-active;
+  }
+}
+
 .header {
     .header-container {
         display: flex;
@@ -109,12 +127,12 @@
             }
 
             &:hover {
-                @include bar-button-hover;
+                @include header-button-hover;
             }
 
             &:active,
             &.selected {
-                @include bar-button-active;
+                @include header-button-active;
             }
 
             .user-menu-pfp {
@@ -270,15 +288,13 @@
     }
 
     &:hover {
-        opacity: $header-link-active-opacity;
+        @include header-button-hover;
         text-decoration: none;
-        background: $header-link-hover;
     }
 
     &:active {
-        opacity: $header-link-active-opacity;
+        @include header-button-active;
         text-decoration: none;
-        background: $header-link-active;
     }
 
     .icon {
