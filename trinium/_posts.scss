@@ -141,6 +141,10 @@
 #new-comment-form,
 .new-reply-form {
     flex: 1;
+    
+    textarea {
+        width: 100%;
+    }
 }
 
 .new-post-bottom {
