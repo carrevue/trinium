@@ -41,13 +41,18 @@
                 column-gap: 0.5em;
                 flex-wrap: wrap;
 
+                &.vertical {
+                    flex-direction: column;
+                    align-items: flex-start;
+                }
+
                 .section-desc {
                     opacity: 50%;
                 }
             }
         }
 
-        margin-bottom: 0.5em;
+        margin-bottom: 1em; // originally 0.5em.
     }
 
     margin-bottom: 1em;

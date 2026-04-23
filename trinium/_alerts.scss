@@ -2,23 +2,35 @@
 
 @mixin alert-variant($value) {
     $border-color: color.adjust($value, $lightness: -7.5%);
+
     @if $color-scheme == "dark" {
-        $border-color: color.adjust($value, $lightness: 10%);
+        $border-color: color.adjust($value, $lightness: -10%);
     }
 
     color: contrast-color($value, #000, #fff);
 
     @if $theme == "default" {
-        $border: if(
-            $value == $secondary,
-            $value,
-            color.mix(white, $value, 60%)
-        );
+        @if $color-scheme == "dark" {
+            $border: if(
+                $value == $secondary,
+                color.mix(white, $value, 40%),
+                color.mix(white, $value, 20%)
+            );
 
-        color: color.mix(black, $value, 50%);
-        background-color: color.mix(white, $value, 80%);
-        background-image: none;
-        border: 1px solid $border;
+            color: $value;
+            background-color: color.mix(black, $value, 80%);
+            border: 1px solid $border-color;
+        } @else {
+            $border: if(
+                $value == $secondary,
+                $value,
+                color.mix(white, $value, 60%)
+            );
+
+            color: color.mix(black, $value, 50%);
+            background-color: color.mix(white, $value, 80%);
+            border: 1px solid $border;
+        }
     } @else {
         background-color: $value;
     }
