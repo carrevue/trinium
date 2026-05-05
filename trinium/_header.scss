@@ -101,14 +101,38 @@
     display: flex;
     align-items: center;
 
-    .user-menu-container {
+    a:not(.menu-item-button) {
+        display: flex;
+        align-items: center;
+        gap: 0.5em;
+        color: $header-color;
+        opacity: $header-link-inactive-opacity;
+        height: $header-height;
+        padding: 0 0.5em;
+
+        @if $color-scheme == "dark" {
+            text-shadow: 0 1px 0 rgba(black, 0.25);
+        }
+
+        &:hover {
+            @include header-button-hover;
+            text-decoration: none;
+        }
+
+        &:active {
+            @include header-button-active;
+            text-decoration: none;
+        }
+    }
+
+    .header-menu-container {
         direction: rtl;
 
         [dir="rtl"] & {
             direction: ltr;
         }
 
-        .user-menu-button {
+        .menu-button {
             height: $header-height;
             padding: 0 8px;
             direction: ltr;
@@ -142,9 +166,17 @@
 
             .user-menu-caret-container {
                 display: inline-block;
-                opacity: 0.75;
+                opacity: $header-link-inactive-opacity;
                 width: 16px;
                 height: 16px;
+            }
+
+            .menu-button-text {
+                display: inline;
+            }
+
+            svg.icon, .menu-button-text {
+                opacity: $header-link-inactive-opacity;
             }
 
             .have-an-account {
@@ -271,60 +303,6 @@
 
     .form-button-container {
         display: inline;
-    }
-}
-
-.menulink {
-    display: flex;
-    align-items: center;
-    gap: 0.5em;
-    color: $header-color;
-    opacity: $header-link-inactive-opacity;
-    height: $header-height;
-    padding: 0 0.5em;
-
-    @if $color-scheme == "dark" {
-        text-shadow: 0 1px 0 rgba(black, 0.25);
-    }
-
-    &:hover {
-        @include header-button-hover;
-        text-decoration: none;
-    }
-
-    &:active {
-        @include header-button-active;
-        text-decoration: none;
-    }
-
-    .icon {
-        width: 32px;
-        height: 32px;
-        background-size: 32px;
-    }
-
-    &.hide-small {
-        display: none;
-
-        @include responsive('tiny') {
-            display: none;
-        }
-
-        @include responsive('small') {
-            display: flex;
-        }
-
-        @include responsive('medium') {
-            display: flex;
-        }
-    }
-
-    &.username {
-        display: none;
-
-        @include responsive('medium') {
-            display: inline;
-        }
     }
 }
 

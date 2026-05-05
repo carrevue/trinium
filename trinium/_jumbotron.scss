@@ -93,18 +93,11 @@
                             @include responsive('small') {
                                 display: flex;
                                 align-items: center; // looks FUCKED with center
-                                gap: 0.65em;
                             }
 
                             @include responsive('medium') {
                                 display: flex;
                                 align-items: center; // looks FUCKED with center
-                                gap: 0.65em;
-                            }
-
-                            span {
-                                font-family: "Caveat", cursive, sans-serif;
-                                font-size: 1.5em;
                             }
                         }
                     }

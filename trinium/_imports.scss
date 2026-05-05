@@ -1,8 +1,6 @@
 // yes starting with dart-sass 1.79/1.80 shits getting deprecated!
 
 @use "sass:color";
-// caveat is used by the "its free!" text on logged out jumbotron
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
 
 @import 'normalize';
 @import 'variables';
