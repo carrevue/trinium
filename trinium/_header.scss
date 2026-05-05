@@ -101,7 +101,7 @@
     display: flex;
     align-items: center;
 
-    a:not(.menu-item-button) {
+    a:not(.menu-item-button):not(.menu a) {
         display: flex;
         align-items: center;
         gap: 0.5em;
@@ -191,8 +191,6 @@
                 @include responsive('medium') {
                     display: inline;
                 }
-
-                margin-right: 0.5ch;
             }
         }
     }
