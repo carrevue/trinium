@@ -77,8 +77,6 @@
 
                     .jumbotron-welcome {
                         .jumbotron-slogan {
-                            line-height: 1.5em;
-
                             q {
                                 font-style: italic;
                                 font-synthesis: none; // fix emojis/unicode symbols
@@ -107,7 +105,7 @@
 
         .jumbotron-welcome {
             flex-grow: 1;
-            line-height: 2.5em;
+            line-height: 2em;
         }
     }
 
