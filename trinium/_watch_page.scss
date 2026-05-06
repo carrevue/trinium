@@ -33,16 +33,6 @@
 
         .watch-box-below-title {
             font-size: $font-size-small;
-
-            .watch-box-below-title-featured {
-                @if $theme == "flat" {
-                    color: $yellow;
-                } @else {
-                    background-image: linear-gradient($yellow, (color.adjust(color.adjust($yellow, $lightness: -2.5%), $hue: -1deg)));
-                    color: transparent;
-                    background-clip: text;
-                }
-            }
         }
     }
 

@@ -46,7 +46,7 @@
 
             .jumbotron-container {
                 &.homepage-logged-in {
-                    height: 100px;
+                    height: 90px;
 
                     .jumbotron-welcome {
                         display: flex;
@@ -65,8 +65,8 @@
                             }
 
                             @include responsive('medium') {
-                                width: 72px;
-                                height: 72px;
+                                width: 64px;
+                                height: 64px;
                             }
                         }
                     }
