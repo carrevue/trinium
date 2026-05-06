@@ -8,6 +8,15 @@
     display: flex;
     justify-content: center;
 
+    &.pager {
+        justify-content: space-between;
+
+        .pagination-item, .pagination-item:first-child, .pagination-item:last-child {
+            border: 1px solid $content-box-border-color;
+            border-radius: 1000px;
+        }
+    }
+
     .pagination-item {
         display: inline-block;
         padding: 4px 12px;
