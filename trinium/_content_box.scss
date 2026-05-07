@@ -22,12 +22,11 @@
 
 @mixin content-box-small-info {
     margin: auto;
-    font-weight: normal;
     overflow: hidden;
     text-overflow: ellipsis;
     display: block;
     white-space: nowrap;
-    @include content-box-small-max-widths;
+    max-width: 100%;
 }
 
 .thumbnail {
@@ -148,10 +147,6 @@
     &.related-uploads {
         max-height: 800px;
         overflow-y: scroll;
-    }
-
-    &.carousel {
-        padding: $content-box-padding 0;
     }
 
     .section {
@@ -346,10 +341,13 @@
     .content-entry-small {
         display: flex;
         flex-direction: column;
+        width: 100%;
+        min-width: 0;
         max-height: $content-box-grid-entry-height;
         text-align: center;
 
         .content-title {
+            font-weight: 700;
             font-size: 12px;
             @include content-box-small-info;
         }
