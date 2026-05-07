@@ -53,6 +53,14 @@
                         align-items: center;
                         gap: 1em;
 
+                        .jumbotron-details {
+                            span {
+                                &:not(:last-child)::after {
+                                    content: ' • ';
+                                }
+                            }
+                        }
+
                         .profile-picture {
                             @include responsive('tiny') {
                                 width: 48px;

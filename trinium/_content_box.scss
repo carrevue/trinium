@@ -232,6 +232,14 @@
                 font-size: $font-size-smaller;
             }
 
+            .content-detail {
+                span {
+                    &:not(:last-child)::after {
+                        content: ' • ';
+                    }
+                }
+            }
+
             .content-description {
                 &.clamp {
                     display: -webkit-box;

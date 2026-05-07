@@ -33,6 +33,12 @@
 
         .watch-box-below-title {
             font-size: $font-size-small;
+            
+            span {
+                &:not(:last-child)::after {
+                    content: ' • ';
+                }
+            }
         }
     }
 
