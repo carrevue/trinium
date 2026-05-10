@@ -1,3 +1,8 @@
+@use 'config' as *;
+
+@use "mixins/responsiveness";
+@use "variables";
+
 @use "sass:color";
 
 .tabcontent {
@@ -5,27 +10,27 @@
 }
 
 .tabs {
-    border-bottom: 1px solid $content-box-border-color;
+    border-bottom: 1px solid variables.$content-box-border-color;
     display: flex;
 }
 
 .tablink {
-    font-family: $font;
+    font-family: variables.$font;
     cursor: pointer;
     background-color: #fff0;
     margin-bottom: -1px;
-    border-radius: $content-box-border-radius $content-box-border-radius 0 0;
+    border-radius: variables.$content-box-border-radius variables.$content-box-border-radius 0 0;
     color: var(--link-color);
     display: inline-block;
     border: 1px solid #0000;
     text-align: center;
 
-    @include responsive('tiny') {
+    @include responsiveness.responsive('tiny') {
         padding: 6px 0;
         flex: 1;
     }
 
-    @include responsive('small') {
+    @include responsiveness.responsive('small') {
         padding: 6px 16px;
         flex: none;
         &.has-icon {
@@ -33,7 +38,7 @@
         }
     }
 
-    @include responsive('medium') {
+    @include responsiveness.responsive('medium') {
         padding: 6px 16px;
         flex: none;
         &.has-icon {
@@ -48,17 +53,17 @@
     }
 
     &:hover {
-        background-color: color.adjust($bg-color, $lightness: if(lightness($bg-color) > 50%, -5%, 5%));
+        background-color: color.adjust(variables.$bg-color, $lightness: if(color.lightness(variables.$bg-color) > 50%, -5%, 5%));
         text-decoration: none;
     }
 
     &:active {
-        background-color: color.adjust($bg-color, $lightness: if(lightness($bg-color) > 50%, -10%, 10%));
+        background-color: color.adjust(variables.$bg-color, $lightness: if(color.lightness(variables.$bg-color) > 50%, -10%, 10%));
     }
 
     &.active {
-        background-color: $content-box-background-color;
-        border: 1px solid $content-box-border-color;
+        background-color: variables.$content-box-background-color;
+        border: 1px solid variables.$content-box-border-color;
         border-bottom: none;
 
         @if $color-scheme == "dark" {

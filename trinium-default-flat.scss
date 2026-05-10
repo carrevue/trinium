@@ -4,9 +4,4 @@
  * Licensed under MIT (https://github.com/carrevue/trinium/blob/main/LICENSE)
  */
 
-@import url("https://rsms.me/inter/inter.css");
-
-$theme: "flat";
-$color-scheme: "default";
-
-@import 'trinium/imports';
+@use 'trinium/imports' with ($theme: "flat", $color-scheme: "default");

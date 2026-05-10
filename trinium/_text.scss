@@ -1,4 +1,6 @@
-@each $color, $value in $color-map {
+@use "variables";
+
+@each $color, $value in variables.$color-map {
     .text-#{$color} {
         color: $value;
     }

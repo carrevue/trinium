@@ -1,6 +1,8 @@
+@use "variables";
+
 #dropZone {
-    border: 2px dashed $content-box-border-color;
-    border-radius: $content-box-border-radius;
+    border: 2px dashed variables.$content-box-border-color;
+    border-radius: variables.$content-box-border-radius;
     height: 360px;
     display: flex;
     flex-direction: column;

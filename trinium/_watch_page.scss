@@ -1,8 +1,10 @@
+@use "variables";
+
 .upload-container {
     text-align: center;
-    background: $content-box-background-color;
-    border: 1px solid $content-box-border-color;
-    border-radius: $content-box-border-radius;
+    background: variables.$content-box-background-color;
+    border: 1px solid variables.$content-box-border-color;
+    border-radius: variables.$content-box-border-radius;
 
     .img-upload {
         padding: 1rem;
@@ -10,15 +12,15 @@
     }
 
     .plyr {
-        border-radius: $content-box-border-radius;
+        border-radius: variables.$content-box-border-radius;
     }
 }
 
 .watch-box {
-    background: $content-box-background-color;
-    border: 1px solid $content-box-border-color;
-    padding: $content-box-padding;
-    border-radius: $content-box-border-radius;
+    background: variables.$content-box-background-color;
+    border: 1px solid variables.$content-box-border-color;
+    padding: variables.$content-box-padding;
+    border-radius: variables.$content-box-border-radius;
     overflow: hidden;
     word-break: break-word;
 
@@ -32,7 +34,7 @@
         }
 
         .watch-box-below-title {
-            font-size: $font-size-small;
+            font-size: variables.$font-size-small;
             
             span {
                 &:not(:last-child)::after {
@@ -47,7 +49,7 @@
         word-wrap: break-word;
 
         .watch-box-description-info-small {
-            font-size: $font-size-small;
+            font-size: variables.$font-size-small;
         }
     }
 
@@ -59,11 +61,11 @@
             text-align: right;
 
             .watch-box-views {
-                font-size: $font-size-bigger;
+                font-size: variables.$font-size-bigger;
             }
 
             .watch-box-ratings-number {
-                font-size: $font-size-smaller;
+                font-size: variables.$font-size-smaller;
                 opacity: 50%;
             }
         }
@@ -82,15 +84,15 @@
 
             .watch-box-author {
                 .watch-box-author-userlink {
-                    font-size: $font-size-normal;
+                    font-size: variables.$font-size-normal;
                 }
 
                 #follower_count {
-                    font-size: $font-size-small;
+                    font-size: variables.$font-size-small;
                 }
 
                 .watch-box-followers-logged-out {
-                    font-size: $font-size-smaller;
+                    font-size: variables.$font-size-smaller;
                 }
 
                 .watch-box-followers-logged-out {

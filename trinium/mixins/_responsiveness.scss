@@ -1,5 +1,8 @@
+@use "sass:map";
+@use "../variables";
+
 @function min-width-for($size) {
-  $width: map-get($breakpoints, $size);
+  $width: map.get(variables.$breakpoints, $size);
   @return '(min-width: #{$width})';
 }
 

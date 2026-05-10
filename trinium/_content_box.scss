@@ -1,21 +1,27 @@
+@use 'config' as *;
+
+@use "mixins/responsiveness";
+@use "mixins/scrollbar";
+@use "variables";
+
 @mixin content-box-small-max-widths {
-    @include responsive('tiny') {
+    @include responsiveness.responsive('tiny') {
         max-width: 140px;
     }
 
-    @include responsive('small') {
+    @include responsiveness.responsive('small') {
         max-width: 120px;
     }
 
-    @include responsive('medium') {
+    @include responsiveness.responsive('medium') {
         max-width: 120px;
     }
 
-    @include responsive('large') {
+    @include responsiveness.responsive('large') {
         max-width: 140px;
     }
 
-    @include responsive('huge') {
+    @include responsiveness.responsive('huge') {
         max-width: 160px;
     }
 }
@@ -31,7 +37,7 @@
 
 .thumbnail {
     border-radius: 2px;
-    border: 1px solid $content-box-border-color;
+    border: 1px solid variables.$content-box-border-color;
 
     @if $theme == "default" {
         box-shadow: 0 1px 2px rgba(black, 0.1);
@@ -42,42 +48,42 @@
     /* named like this to avoid conflicts with grid system */
     display: grid;
     gap: 5px;
-    grid-auto-rows: minmax($content-box-grid-entry-width, auto);
+    grid-auto-rows: minmax(variables.$content-box-grid-entry-width, auto);
 
-    @include responsive('tiny') {
+    @include responsiveness.responsive('tiny') {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    @include responsive('small') {
+    @include responsiveness.responsive('small') {
         grid-template-columns: repeat(3, 1fr);
     }
 
-    @include responsive('medium') {
+    @include responsiveness.responsive('medium') {
         grid-template-columns: repeat(4, 1fr);
     }
 
-    @include responsive('large') {
+    @include responsiveness.responsive('large') {
         grid-template-columns: repeat(4, 1fr);
     }
 
     &.content-grid-uploads {
         grid-auto-rows: minmax(auto, auto);
 
-        @include responsive('tiny') {
+        @include responsiveness.responsive('tiny') {
             // fucking stupid
             grid-template-columns: repeat(1, 1fr);
         }
 
-        @include responsive('small') {
+        @include responsiveness.responsive('small') {
             // ditto
             grid-template-columns: repeat(1, 1fr);
         }
 
-        @include responsive('medium') {
+        @include responsiveness.responsive('medium') {
             grid-template-columns: repeat(2, 1fr);
         }
 
-        @include responsive('large') {
+        @include responsiveness.responsive('large') {
             grid-template-columns: repeat(2, 1fr);
         }
 
@@ -91,19 +97,19 @@
     &.content-grid-users {
         grid-auto-rows: minmax(auto, auto);
 
-        @include responsive('tiny') {
+        @include responsiveness.responsive('tiny') {
             grid-template-columns: repeat(2, 1fr);
         }
 
-        @include responsive('small') {
+        @include responsiveness.responsive('small') {
             grid-template-columns: repeat(2, 1fr);
         }
 
-        @include responsive('medium') {
+        @include responsiveness.responsive('medium') {
             grid-template-columns: repeat(2, 1fr);
         }
 
-        @include responsive('large') {
+        @include responsiveness.responsive('large') {
             grid-template-columns: repeat(4, 1fr);
         }
 
@@ -116,22 +122,22 @@
 }
 
 .content-header {
-    background: $content-box-border-color;
+    background: variables.$content-box-border-color;
     padding: 0.3em 0.5em;
-    color: $text-color;
+    color: variables.$text-color;
     font-weight: 700;
 }
 
 .content-box {
-    border: 1px solid $content-box-border-color;
-    background: $content-box-background-color;
-    padding: $content-box-padding;
+    border: 1px solid variables.$content-box-border-color;
+    background: variables.$content-box-background-color;
+    padding: variables.$content-box-padding;
     overflow: hidden;
     word-break: break-word;
 
-    border-radius: $content-box-border-radius;
+    border-radius: variables.$content-box-border-radius;
 
-    @include scrollbar();
+    @include scrollbar.scrollbar();
 
     &.no-border-top {
         border-top: none;
@@ -166,7 +172,7 @@
         padding: 1em 0;
         gap: 0.8em;
 
-        border-bottom: 1px solid $content-box-border-color;
+        border-bottom: 1px solid variables.$content-box-border-color;
 
         &:first-child {
             padding-top: 0;
@@ -196,14 +202,14 @@
             flex-grow: 1;
 
             .content-title {
-                font-size: $font-size-normal;
+                font-size: variables.$font-size-normal;
                 font-weight: 700;
             }
 
             .content-title-upload {
                 .content-title-link {
                     flex-grow: 1;
-                    font-size: $font-size-normal;
+                    font-size: variables.$font-size-normal;
                 }
 
                 .content-rating {
@@ -220,11 +226,11 @@
             }
 
             .content-text {
-                font-size: $font-size-small;
+                font-size: variables.$font-size-small;
             }
 
             .content-author, .content-detail, .content-description {
-                font-size: $font-size-smaller;
+                font-size: variables.$font-size-smaller;
             }
 
             .content-detail {
@@ -264,7 +270,7 @@
 
                     height: 18px;
                     padding: 0 2px;
-                    font-size: $font-size-small;
+                    font-size: variables.$font-size-small;
 
                     color: white;
 
@@ -284,23 +290,23 @@
             min-height: 50px;
             display: block;
 
-            @include responsive('tiny') {
+            @include responsiveness.responsive('tiny') {
                 width: 120px;
             }
 
-            @include responsive('small') {
+            @include responsiveness.responsive('small') {
                 width: 120px;
             }
 
-            @include responsive('medium') {
+            @include responsiveness.responsive('medium') {
                 width: 120px;
             }
 
-            @include responsive('large') {
+            @include responsiveness.responsive('large') {
                 width: 160px;
             }
 
-            @include responsive('huge') {
+            @include responsiveness.responsive('huge') {
                 width: 175px;
             }
 
@@ -310,27 +316,27 @@
 
             //
             &.profile-picture {
-                @include responsive('tiny') {
+                @include responsiveness.responsive('tiny') {
                     width: 50px;
                     height: 50px;
                 }
 
-                @include responsive('small') {
+                @include responsiveness.responsive('small') {
                     width: 60px;
                     height: 60px;
                 }
 
-                @include responsive('medium') {
+                @include responsiveness.responsive('medium') {
                     width: 64px;
                     height: 64px;
                 }
 
-                @include responsive('large') {
+                @include responsiveness.responsive('large') {
                     width: 64px;
                     height: 64px;
                 }
 
-                @include responsive('huge') {
+                @include responsiveness.responsive('huge') {
                     width: 64px;
                     height: 64px;
                 }
@@ -343,7 +349,7 @@
         flex-direction: column;
         width: 100%;
         min-width: 0;
-        max-height: $content-box-grid-entry-height;
+        max-height: variables.$content-box-grid-entry-height;
         text-align: center;
 
         .content-title {
@@ -372,14 +378,14 @@
             display: table;
             text-align: center;
             margin: auto;
-            height: $content-box-grid-entry-width;
+            height: variables.$content-box-grid-entry-width;
 
             .content-image-link {
                 display: table-cell;
                 vertical-align: middle;
 
                 .content-image {
-                    max-height: $content-box-grid-entry-width;
+                    max-height: variables.$content-box-grid-entry-width;
                     margin: 2px auto;
                     @include content-box-small-max-widths;
 

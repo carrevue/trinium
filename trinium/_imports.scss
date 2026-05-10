@@ -1,29 +1,31 @@
+@use 'config' as *;
 // yes starting with dart-sass 1.79/1.80 shits getting deprecated!
+
+$theme: "default" !default;
+$color-scheme: "light" !default;
 
 @use "sass:color";
 
-@import 'normalize';
-@import 'variables';
+@use "sass:meta";
+@use 'normalize';
+@use 'variables';
 
-@import 'mixins/responsiveness';
-@import 'mixins/scrollbar';
+@use 'mixins/responsiveness';
+@use 'mixins/scrollbar';
+@use 'mixins/temporary_bullshit_move_this_later';
 
-@function contrast-color($color, $dark, $light) {
-    @return if(color.channel($color, "lightness", $space: hsl) < $threshold, $light, $dark)
-}
+@use 'icons';
 
-@import 'icons';
-
-@import 'page';
-@import 'grid_system';
+@use 'page';
+@use 'grid_system';
 
 // misc unorganized shit
 :root {
-    font-family: $font;
-    --link-color: #{$link-color};
+    font-family: variables.$font;
+    --link-color: #{variables.$link-color};
     -webkit-tap-highlight-color: #0000;
 
-    @each $color, $value in $color-map {
+    @each $color, $value in variables.$color-map {
         --#{$color}: #{$value};
     }
 }
@@ -43,8 +45,8 @@
 }
 
 body {
-    background: $bg-color;
-    color: $text-color;
+    background: variables.$bg-color;
+    color: variables.$text-color;
     font-size: 14px;
     padding: 0;
     margin: 0;
@@ -72,37 +74,37 @@ $header-weight: 600;
 
 h1 {
     margin: 0;
-    font-size: $font-size-h1;
+    font-size: variables.$font-size-h1;
     font-weight: $header-weight;
 }
 
 h2 {
     margin: 0;
-    font-size: $font-size-h2;
+    font-size: variables.$font-size-h2;
     font-weight: $header-weight;
 }
 
 h3 {
     margin: 0;
-    font-size: $font-size-h3;
+    font-size: variables.$font-size-h3;
     font-weight: $header-weight;
 }
 
 h4 {
     margin: 0;
-    font-size: $font-size-h4;
+    font-size: variables.$font-size-h4;
     font-weight: $header-weight;
 }
 
 h5 {
     margin: 0;
-    font-size: $font-size-h5;
+    font-size: variables.$font-size-h5;
     font-weight: $header-weight;
 }
 
 h6 {
     margin: 0;
-    font-size: $font-size-h6;
+    font-size: variables.$font-size-h6;
     font-weight: $header-weight;
 }
 
@@ -133,7 +135,7 @@ pre {
 blockquote {
     margin: 0 0 0.5em 0;
     padding-left: 0.8em;
-    border-left: 4px solid $content-box-border-color;
+    border-left: 4px solid variables.$content-box-border-color;
 }
 
 .profile-picture {
@@ -169,7 +171,7 @@ blockquote {
 
 hr {
     border: 0;
-    border-bottom: 1px solid $content-box-border-color;
+    border-bottom: 1px solid variables.$content-box-border-color;
     height: 0;
     margin: 1em 0;
 }
@@ -188,7 +190,7 @@ hr {
     width: 800px;
 
     .tabcontent {
-        @include scrollbar();
+        @include scrollbar.scrollbar();
         height: 400px;
     }
 }
@@ -199,7 +201,7 @@ hr {
 
 dialog {
     z-index: 50000;
-    color: $text-color;
+    color: variables.$text-color;
 }
 
 ::backdrop {
@@ -230,7 +232,7 @@ dialog {
         }
 
         .userlink-handle {
-            color: $text-color;
+            color: variables.$text-color;
             opacity: 50%;
             text-decoration: none;
             font-weight: normal;
@@ -261,15 +263,15 @@ ul.unstyled-list {
 
 //awkward clr overrides
 .clr-picker {
-    background-color: $content-box-background-color !important;
-    border: 1px solid $content-box-border-color;
+    background-color: variables.$content-box-background-color !important;
+    border: 1px solid variables.$content-box-border-color;
     box-shadow: 0 2px 5px rgba(black, 0.1) !important;
     border-radius: 8px;
 
     input.clr-color {
-        background-color: $form-bg-color !important;
-        color: $form-text-color !important;
-        border: 1px solid $form-border-color !important;
+        background-color: variables.$form-bg-color !important;
+        color: variables.$form-text-color !important;
+        border: 1px solid variables.$form-border-color !important;
         border-radius: 6px;
 
         &:focus {
@@ -278,31 +280,31 @@ ul.unstyled-list {
     }
 }
 
-@import 'alerts';
-@import 'buttons';
-@import 'content_box';
-@import 'footer';
-@import 'forms';
-@import 'header';
-@import 'jumbotron';
-@import 'menus';
-@import 'pagination';
-@import 'posts';
-@import 'sections';
-@import 'sidebar';
-@import 'table';
-@import 'tabs';
-@import 'text';
-@import 'tooltips';
+@include meta.load-css('alerts');
+@include meta.load-css('buttons');
+@include meta.load-css('content_box');
+@include meta.load-css('footer');
+@include meta.load-css('forms');
+@include meta.load-css('header');
+@include meta.load-css('jumbotron');
+@include meta.load-css('menus');
+@include meta.load-css('pagination');
+@include meta.load-css('posts');
+@include meta.load-css('sections');
+@include meta.load-css('sidebar');
+@include meta.load-css('table');
+@include meta.load-css('tabs');
+@include meta.load-css('text');
+@include meta.load-css('tooltips');
 
-@import 'admin_page';
-@import 'theme_page';
-@import 'login_register_page';
-@import 'profile_page';
-@import 'setting_page';
-@import 'upload_page';
-@import 'version_page';
-@import 'watch_page';
+@include meta.load-css('admin_page');
+@include meta.load-css('theme_page');
+@include meta.load-css('login_register_page');
+@include meta.load-css('profile_page');
+@include meta.load-css('setting_page');
+@include meta.load-css('upload_page');
+@include meta.load-css('version_page');
+@include meta.load-css('watch_page');
 
 // goanna fixes
 .goanna {

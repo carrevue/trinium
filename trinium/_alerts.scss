@@ -1,3 +1,6 @@
+@use 'config' as *;
+@use "variables";
+
 @use "sass:color";
 
 @mixin alert-variant($value) {
@@ -12,7 +15,7 @@
     @if $theme == "default" {
         @if $color-scheme == "dark" {
             $border: if(
-                $value == $secondary,
+                $value == variables.$secondary,
                 color.mix(white, $value, 40%),
                 color.mix(white, $value, 20%)
             );
@@ -22,7 +25,7 @@
             border: 1px solid $border-color;
         } @else {
             $border: if(
-                $value == $secondary,
+                $value == variables.$secondary,
                 $value,
                 color.mix(white, $value, 60%)
             );
@@ -51,7 +54,7 @@
     margin-bottom: 1em;
     gap: 0.75em;
 
-    @each $color, $value in $color-map {
+    @each $color, $value in variables.$color-map {
         &.#{$color} {
             @include alert-variant($value);
         }

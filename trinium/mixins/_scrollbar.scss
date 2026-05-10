@@ -1,3 +1,5 @@
+@use "../variables";
+
 @use "sass:color";
 
 @mixin scrollbar() {
@@ -8,7 +10,7 @@
     }
 
     &:hover {
-        scrollbar-color: color.adjust($content-box-border-color, $lightness: -15%) $content-box-border-color;
+        scrollbar-color: color.adjust(variables.$content-box-border-color, $lightness: -15%) variables.$content-box-border-color;
         scrollbar-width: thin;
 
         &::-webkit-scrollbar {

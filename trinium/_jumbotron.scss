@@ -1,3 +1,8 @@
+@use 'config' as *;
+
+@use "mixins/responsiveness";
+@use "variables";
+
 @use 'sass:math';
 
 .jumbotron {
@@ -18,7 +23,7 @@
             box-shadow: inset 0 -7px 9px -7px rgba(black, 0.25);
         }
 
-        border-bottom: 1px solid $content-box-border-color;
+        border-bottom: 1px solid variables.$content-box-border-color;
 
         h1,
         p {
@@ -26,18 +31,18 @@
         }
 
         h1 {
-            font-size: $font-size-huge;
+            font-size: variables.$font-size-huge;
 
-            @include responsive('tiny') {
-                font-size: $font-size-big;
+            @include responsiveness.responsive('tiny') {
+                font-size: variables.$font-size-big;
             }
 
-            @include responsive('small') {
-                font-size: $font-size-bigger;
+            @include responsiveness.responsive('small') {
+                font-size: variables.$font-size-bigger;
             }
 
-            @include responsive('medium') {
-                font-size: $font-size-huge;
+            @include responsiveness.responsive('medium') {
+                font-size: variables.$font-size-huge;
             }
         }
 
@@ -62,17 +67,17 @@
                         }
 
                         .profile-picture {
-                            @include responsive('tiny') {
+                            @include responsiveness.responsive('tiny') {
                                 width: 48px;
                                 height: 48px;
                             }
 
-                            @include responsive('small') {
+                            @include responsiveness.responsive('small') {
                                 width: 64px;
                                 height: 64px;
                             }
 
-                            @include responsive('medium') {
+                            @include responsiveness.responsive('medium') {
                                 width: 64px;
                                 height: 64px;
                             }
@@ -92,16 +97,16 @@
                         }
 
                         .jumbotron-get-started {
-                            @include responsive('tiny') {
+                            @include responsiveness.responsive('tiny') {
                                 display: none;
                             }
 
-                            @include responsive('small') {
+                            @include responsiveness.responsive('small') {
                                 display: flex;
                                 align-items: center; // looks FUCKED with center
                             }
 
-                            @include responsive('medium') {
+                            @include responsiveness.responsive('medium') {
                                 display: flex;
                                 align-items: center; // looks FUCKED with center
                             }
@@ -118,39 +123,39 @@
     }
 
     &.profile-banner {
-        @include responsive('tiny') {
+        @include responsiveness.responsive('tiny') {
             background: #111 center no-repeat;
             background-size: cover;
             height: 100px;
         }
 
-        @include responsive('small') {
+        @include responsiveness.responsive('small') {
             background: #111 center no-repeat;
             background-size: cover;
             height: 200px;
         }
 
-        @include responsive('medium') {
+        @include responsiveness.responsive('medium') {
             background: #111 center no-repeat;
             height: 300px;
         }
 
-        @include responsive('large') {
+        @include responsiveness.responsive('large') {
             background: #111 center no-repeat;
             height: 300px;
         }
 
         .jumbotron-container {
-            padding-top: $header-height;
+            padding-top: variables.$header-height;
         }
 
         &.sidebar-active {
-            @include responsive('medium') {
-                background-position-x: calc(50% + math.div($sidebar-width-medium, 2));
+            @include responsiveness.responsive('medium') {
+                background-position-x: calc(50% + math.div(variables.$sidebar-width-medium, 2));
             }
 
-            @include responsive('large') {
-                background-position-x: calc(50% + math.div($sidebar-width-large, 2));
+            @include responsiveness.responsive('large') {
+                background-position-x: calc(50% + math.div(variables.$sidebar-width-large, 2));
             }
         }
     }
@@ -160,7 +165,7 @@
         display: flex;
         align-items: center;
         margin: auto;
-        @include maxwidths();
+        @include responsiveness.maxwidths();
     }
 
     .jumbotron-right-container {
@@ -168,17 +173,17 @@
         height: inherit;
         display: flex;
 
-        @include responsive('tiny') {
+        @include responsiveness.responsive('tiny') {
             flex-direction: column-reverse;
             justify-content: space-between;
         }
 
-        @include responsive('small') {
+        @include responsiveness.responsive('small') {
             flex-direction: column-reverse;
             justify-content: space-between;
         }
 
-        @include responsive('medium') {
+        @include responsiveness.responsive('medium') {
             flex-direction: column;
             justify-content: space-between;
         }
@@ -187,15 +192,15 @@
             margin-top: 0.5rem;
             font-weight: normal;
 
-            @include responsive('tiny') {
+            @include responsiveness.responsive('tiny') {
                 display: none;
             }
 
-            @include responsive('small') {
+            @include responsiveness.responsive('small') {
                 display: none;
             }
 
-            @include responsive('medium') {
+            @include responsiveness.responsive('medium') {
                 display: inline;
             }
         }

@@ -1,3 +1,7 @@
+@use 'config' as *;
+
+@use "variables";
+
 @use "sass:color";
 
 .pagination {
@@ -10,7 +14,7 @@
         justify-content: space-between;
 
         .pagination-item, .pagination-item:first-child, .pagination-item:last-child {
-            border: 1px solid $content-box-border-color;
+            border: 1px solid variables.$content-box-border-color;
             border-radius: 1000px;
         }
         
@@ -28,7 +32,7 @@
     .pagination-item {
         display: inline-block;
         padding: 4px 12px;
-        border: 1px solid $content-box-border-color;
+        border: 1px solid variables.$content-box-border-color;
         border-right: none;
 
         &:first-child {
@@ -36,7 +40,7 @@
         }
 
         &:last-child {
-            border-right: 1px solid $content-box-border-color;
+            border-right: 1px solid variables.$content-box-border-color;
             border-radius: 0 4px 4px 0;
         }
 
@@ -44,29 +48,29 @@
             border-radius: 4px;
         }
 
-        background: $content-box-background-color;
+        background: variables.$content-box-background-color;
 
         &:is(a) {
-            color: $accent;
+            color: variables.$accent;
 
             &:hover {
                 text-decoration: none;
-                background-color: color.adjust($content-box-background-color, $lightness: if(lightness($content-box-background-color) > 50%, -5%, 5%));
+                background-color: color.adjust(variables.$content-box-background-color, $lightness: if(color.lightness(variables.$content-box-background-color) > 50%, -5%, 5%));
             }
 
             &:active {
-                background-color: color.adjust($content-box-background-color, $lightness: if(lightness($content-box-background-color) > 50%, -10%, 10%));
+                background-color: color.adjust(variables.$content-box-background-color, $lightness: if(color.lightness(variables.$content-box-background-color) > 50%, -10%, 10%));
             }
         }
 
         &.current {
-            $border-color: color.adjust(color.adjust($accent, $lightness: -7.5%), $hue: 2deg);
+            $border-color: color.adjust(color.adjust(variables.$accent, $lightness: -7.5%), $hue: 2deg);
 
             @if $color-scheme == "dark" {
-                $border-color: color.adjust(color.adjust($accent, $lightness: 10%), $hue: 4deg);
+                $border-color: color.adjust(color.adjust(variables.$accent, $lightness: 10%), $hue: 4deg);
             }
 
-            background: $accent;
+            background: variables.$accent;
             border: 1px solid $border-color;
             border-right: none;
             color: white;
@@ -79,7 +83,7 @@
 
         &.ellipsis {
             // shit but whatever (opacity would fuck this up)
-            color: color.adjust($content-box-background-color, $lightness: if(lightness($content-box-background-color) > 50%, -40%, 40%));
+            color: color.adjust(variables.$content-box-background-color, $lightness: if(color.lightness(variables.$content-box-background-color) > 50%, -40%, 40%));
         }
     }
 }

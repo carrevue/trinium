@@ -1,10 +1,14 @@
+@use 'config' as *;
+
+@use "variables";
+
 .footer {
     margin: 1em 0;
     line-height: 1.35rem;
 
     .footer-container {
         .footer-powered-by {
-            font-size: $font-size-normal;
+            font-size: variables.$font-size-normal;
         }
 
         .footer-links {
@@ -13,11 +17,11 @@
             column-gap: 0.5em;
             flex-wrap: wrap;
 
-            font-size: $font-size-small;
+            font-size: variables.$font-size-small;
         }
 
         .footer-copyright {
-            font-size: $font-size-small;
+            font-size: variables.$font-size-small;
             opacity: 50%;
         }
 

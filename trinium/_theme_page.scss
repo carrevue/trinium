@@ -1,3 +1,5 @@
+@use "variables";
+
 #previewContainer {
     display: flex;
     gap: 1em;
@@ -11,21 +13,21 @@
 }
 
 #skinName {
-    font-size: $font-size-bigger;
+    font-size: variables.$font-size-bigger;
 }
 
 #skinAuthor {
-    font-size: $font-size-smaller;
+    font-size: variables.$font-size-smaller;
     opacity: 0.5;
 
     margin-bottom: 1em;
 }
 
 #themeName {
-    font-size: $font-size-big;
+    font-size: variables.$font-size-big;
 }
 
 #themeAuthor {
-    font-size: $font-size-smaller;
+    font-size: variables.$font-size-smaller;
     opacity: 0.5;
 }

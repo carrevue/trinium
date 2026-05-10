@@ -1,8 +1,12 @@
+@use 'config' as *;
+
+@use "variables";
+
 
 .tooltip {
     position: fixed;
     padding: 4px 8px;
-    font-size: $font-size-small;
+    font-size: variables.$font-size-small;
     border-radius: 4px;
     white-space: nowrap;
     pointer-events: none;

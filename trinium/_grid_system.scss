@@ -1,3 +1,6 @@
+@use "mixins/responsiveness";
+@use "variables";
+
 // from https://gist.github.com/wiegertschouten/443f7e061d1fc656b229ac4b5b0faece
 
 $columns: 12;
@@ -26,12 +29,12 @@ $gap: 1em;
 }
 
 .grid {
-    @include responsive('small') {
+    @include responsiveness.responsive('small') {
         display: flex;
         flex-direction: column;
     }
 
-    @include responsive('medium') {
+    @include responsiveness.responsive('medium') {
         display: grid;
         grid-template-columns: repeat($columns, 1fr);
         gap: $gap;
@@ -48,19 +51,19 @@ $gap: 1em;
 
 @include create-selectors;
 
-@each $breakpoint, $width in $breakpoints {
+@each $breakpoint, $width in variables.$breakpoints {
     @media (min-width: $width) {
         @include create-selectors($breakpoint);
     }
 }
 
 .cluster {
-    border: 1px solid $content-box-border-color;
-    background: $content-box-border-color;
+    border: 1px solid variables.$content-box-border-color;
+    background: variables.$content-box-border-color;
     gap: 1px;
 
     >div {
-        background: $content-box-background-color;
+        background: variables.$content-box-background-color;
         //padding: $content-box-padding;
     }
 
@@ -68,12 +71,12 @@ $gap: 1em;
         margin: 0;
 
         .section-header {
-            padding: $content-box-padding $content-box-padding 0 $content-box-padding;
+            padding: variables.$content-box-padding variables.$content-box-padding 0 variables.$content-box-padding;
             margin: 0;
         }
 
         &:not(:last-child) {
-            border-bottom: 1px solid $content-box-border-color;
+            border-bottom: 1px solid variables.$content-box-border-color;
         }
     }
 
@@ -84,7 +87,7 @@ $gap: 1em;
 
         // kind of ugly ?
         .content-entry, .content-entry:first-child, .content-entry:last-child, .post, .new-post {
-            padding: $content-box-padding;
+            padding: variables.$content-box-padding;
             margin: 0;
         }
     }

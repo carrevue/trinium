@@ -1,8 +1,10 @@
+@use "variables";
+
 .menu {
     display: none;
     position: absolute;
-    background-color: $content-box-background-color;
-    border: 1px solid $content-box-border-color;
+    background-color: variables.$content-box-background-color;
+    border: 1px solid variables.$content-box-border-color;
     padding: 3px 0;
     min-width: 100px;
     z-index: 1999;
@@ -20,7 +22,7 @@
     }
 
     hr {
-        border-color: $content-box-border-color;
+        border-color: variables.$content-box-border-color;
         margin: 0;
     }
 
@@ -28,8 +30,8 @@
         display: flex;
         align-items: center;
         text-align: left;
-        padding: $menu-item-padding;
-        color: rgba($text-color, $header-link-inactive-opacity);
+        padding: variables.$menu-item-padding;
+        color: rgba(variables.$text-color, variables.$header-link-inactive-opacity);
         gap: 5px;
 
         span {
@@ -38,19 +40,19 @@
         }
 
         &.small {
-            font-size: $font-size-small;
+            font-size: variables.$font-size-small;
         }
 
         &:hover {
-            background: $header-link-hover;
-            color: $text-color;
+            background: variables.$header-link-hover;
+            color: variables.$text-color;
             text-decoration: none;
             cursor: pointer;
         }
 
         &:active {
-            background: $header-link-active;
-            color: $text-color;
+            background: variables.$header-link-active;
+            color: variables.$text-color;
             text-decoration: none;
             cursor: pointer;
         }
@@ -66,7 +68,7 @@
 .menu-button {
     .menu-caret-container {
         display: inline-block;
-        opacity: $header-link-inactive-opacity;
+        opacity: variables.$header-link-inactive-opacity;
         width: 16px;
         height: 16px;
     }

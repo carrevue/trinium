@@ -1,15 +1,21 @@
+@use 'config' as *;
+
+@use "sass:color";
+
+@use "variables";
+
 textarea,
 input[type="text"],
 input[type="email"],
 input[type="password"],
 input[type="number"] {
-    border: 1px solid $form-border-color;
-    background-color: $form-bg-color;
-    color: $form-text-color;
+    border: 1px solid variables.$form-border-color;
+    background-color: variables.$form-bg-color;
+    color: variables.$form-text-color;
     transition: border-color linear 0.1s, box-shadow linear 0.2s;
     border-radius: 4px;
     padding: 0.5em;
-    font-family: $font;
+    font-family: variables.$font;
 
     @if $theme == "default" {
         box-shadow: inset 0 1px 1px rgba(black, 0.075);
@@ -32,8 +38,8 @@ input[type="checkbox"] {
     width: 16px;
     height: 16px;
 
-    background-color: $form-bg-color;
-    border: 1px solid $form-border-color;
+    background-color: variables.$form-bg-color;
+    border: 1px solid variables.$form-border-color;
     border-radius: 0;
 
     box-shadow: inset 0 0 1px rgba(0,0,0,.05);
@@ -46,7 +52,7 @@ input[type="checkbox"] {
     }
 
     &:checked {
-        border-color: $accent;
+        border-color: variables.$accent;
         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 8l3 3 5-6' stroke='%23555' stroke-width='2' fill='none'/%3E%3C/svg%3E");
         background-repeat: no-repeat;
         background-position: center;
@@ -55,23 +61,23 @@ input[type="checkbox"] {
 }
 
 $select-background-color: linear-gradient(to bottom, 
-    color.adjust($content-box-background-color, $lightness: -1%) 0, 
-    color.adjust($content-box-background-color, $lightness: -5%) 100%
+    color.adjust(variables.$content-box-background-color, $lightness: -1%) 0, 
+    color.adjust(variables.$content-box-background-color, $lightness: -5%) 100%
 );
-$select-border-color: color.adjust($content-box-border-color, $lightness: -7.5%);
-$select-border-color-hover: color.adjust($content-box-border-color, $lightness: -20%);
+$select-border-color: color.adjust(variables.$content-box-border-color, $lightness: -7.5%);
+$select-border-color-hover: color.adjust(variables.$content-box-border-color, $lightness: -20%);
 
 @if $color-scheme == "dark" {
     $select-background-color: linear-gradient(to bottom, 
-        color.adjust($content-box-background-color, $lightness: 5%) 0, 
-        $content-box-background-color 100%
+        color.adjust(variables.$content-box-background-color, $lightness: 5%) 0, 
+        variables.$content-box-background-color 100%
     );
-    $select-border-color: color.adjust($content-box-border-color, $lightness: 7.5%);
-    $select-border-color-hover: color.adjust($content-box-border-color, $lightness: 20%);
+    $select-border-color: color.adjust(variables.$content-box-border-color, $lightness: 7.5%);
+    $select-border-color-hover: color.adjust(variables.$content-box-border-color, $lightness: 20%);
 }
 
 @if $theme == "flat" {
-    $select-background-color: $content-box-background-color;
+    $select-background-color: variables.$content-box-background-color;
 }
 
 select {
@@ -81,14 +87,14 @@ select {
 
     @if $theme == "flat" {
         background:
-            linear-gradient(45deg, transparent 50%, $text-color 50%),
-            linear-gradient(-45deg, transparent 50%, $text-color 50%),
-            $content-box-background-color;
+            linear-gradient(45deg, transparent 50%, variables.$text-color 50%),
+            linear-gradient(-45deg, transparent 50%, variables.$text-color 50%),
+            variables.$content-box-background-color;
     } @else {
         background:
-            linear-gradient(45deg, transparent 50%, $text-color 50%),
-            linear-gradient(-45deg, transparent 50%, $text-color 50%),
-            $select-background-color $content-box-background-color;
+            linear-gradient(45deg, transparent 50%, variables.$text-color 50%),
+            linear-gradient(-45deg, transparent 50%, variables.$text-color 50%),
+            $select-background-color variables.$content-box-background-color;
     }
 
     background-size:
@@ -107,7 +113,7 @@ select {
     height: 32px;
     font: inherit;
     color: inherit;
-    font-size: $font-size-normal;
+    font-size: variables.$font-size-normal;
     cursor: pointer;
 
     &:hover {

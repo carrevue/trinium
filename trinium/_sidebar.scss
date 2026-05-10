@@ -1,34 +1,40 @@
-#hamburger {
-    background: $mobile-sidebar-background;
-    border-right: 1px solid $mobile-sidebar-border;
+@use 'config' as *;
 
-    top: $header-height;
+@use "mixins/responsiveness";
+@use "mixins/scrollbar";
+@use "variables";
+
+#hamburger {
+    background: variables.$mobile-sidebar-background;
+    border-right: 1px solid variables.$mobile-sidebar-border;
+
+    top: variables.$header-height;
     left: -250px;
     position: fixed;
     z-index: 2000;
-    padding: $content-box-padding 0;
-    height: calc(100vh - $header-height);
+    padding: variables.$content-box-padding 0;
+    height: calc(100vh - variables.$header-height);
 
     @if $theme == "default" {
         box-shadow: 1px 0 6px rgba(black, 0.15);
     }
 
-    @include responsive('tiny') {
+    @include responsiveness.responsive('tiny') {
         width: 200px;
     }
 
-    @include responsive('small') {
+    @include responsiveness.responsive('small') {
         width: 225px;
     }
 
-    @include responsive('medium') {
+    @include responsiveness.responsive('medium') {
         width: 250px;
     }
 
     display: block;
     overflow-y: scroll;
 
-    @include scrollbar();
+    @include scrollbar.scrollbar();
 
     transition: left 0.25s cubic-bezier(0.33, 1, 0.68, 1),
     right 0.25s cubic-bezier(0.33, 1, 0.68, 1);
@@ -54,11 +60,11 @@
 /* this was gonna be flex-grid but i'm pretty sure this is only 
     gonna be used as the sidebar container so whatever */
 .sidebar-page-grid {
-    @include responsive('small') {
+    @include responsiveness.responsive('small') {
         display: block;
     }
 
-    @include responsive('medium') {
+    @include responsiveness.responsive('medium') {
         display: flex;
 
         .content {
@@ -71,37 +77,37 @@
     display: none;
     flex: 0 0 auto;
 
-    @include responsive('medium') {
-        width: $sidebar-width-medium;
+    @include responsiveness.responsive('medium') {
+        width: variables.$sidebar-width-medium;
     }
 
-    @include responsive('large') {
-        width: $sidebar-width-large;
+    @include responsiveness.responsive('large') {
+        width: variables.$sidebar-width-large;
     }
 
     &.active {
         //display: block;
         // fucking ugly code
-        @include responsive('tiny') {
+        @include responsiveness.responsive('tiny') {
             display: none;
         }
 
-        @include responsive('small') {
+        @include responsiveness.responsive('small') {
             display: none;
         }
 
-        @include responsive('medium') {
+        @include responsiveness.responsive('medium') {
             display: block;
         }
 
-        @include responsive('large') {
+        @include responsiveness.responsive('large') {
             display: block;
         }
     }
 }
 
 .sidebar {
-    @include scrollbar();
+    @include scrollbar.scrollbar();
     max-height: 100vh;
 
     position: sticky;
@@ -117,9 +123,9 @@
       // this is fucking ugly
       margin-top: calc(-350px - 5rem);
 
-      background: $content-box-background-color;
-      border: 1px solid $content-box-border-color;
-      padding: $content-box-padding 0;
+      background: variables.$content-box-background-color;
+      border: 1px solid variables.$content-box-border-color;
+      padding: variables.$content-box-padding 0;
 
       border-radius: 4px;
     }
@@ -145,17 +151,17 @@
         .list-header {
             margin-top: 0.9em;
             display: block;
-            padding: $menu-item-padding;
+            padding: variables.$menu-item-padding;
 
             @if $theme == "default" {
-                color: rgba($text-color, 66%);
+                color: rgba(variables.$text-color, 66%);
                 text-transform: uppercase;
-                font-size: $font-size-smaller;
+                font-size: variables.$font-size-smaller;
                 font-weight: 700;
             }
 
             @else {
-                font-size: $font-size-small;
+                font-size: variables.$font-size-small;
             }
         }
 
@@ -172,8 +178,8 @@
 
             a {
                 display: flex;
-                padding: $menu-item-padding;
-                color: rgba($text-color, 75%);
+                padding: variables.$menu-item-padding;
+                color: rgba(variables.$text-color, 75%);
                 align-items: center;
                 gap: 0.5em;
 
@@ -182,15 +188,15 @@
                 }
 
                 &:hover {
-                    background: $header-link-hover;
-                    color: $text-color;
+                    background: variables.$header-link-hover;
+                    color: variables.$text-color;
                     text-decoration: none;
                 }
 
                 &:active,
                 &.selected {
-                    background: $header-link-active;
-                    color: $text-color;
+                    background: variables.$header-link-active;
+                    color: variables.$text-color;
                     text-decoration: none;
                 }
 
@@ -209,14 +215,14 @@
         .list {
             .list-header,
             .list-link a {
-                color: rgba($header-color, 66%);
+                color: rgba(variables.$header-color, 66%);
             }
 
             .list-link a {
                 &:hover,
                 &:active,
                 &.selected {
-                    color: $header-color;
+                    color: variables.$header-color;
                 }
             }
         }

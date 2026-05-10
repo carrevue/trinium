@@ -1,7 +1,9 @@
+@use "variables";
+
 #settings-banner-preview {
     background: #111 center no-repeat;
-    border: 1px solid $content-box-border-color;
-    padding: $content-box-padding;
+    border: 1px solid variables.$content-box-border-color;
+    padding: variables.$content-box-padding;
     height: 300px;
     display: flex;
 

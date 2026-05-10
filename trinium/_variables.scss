@@ -1,3 +1,7 @@
+@use 'config' as *;
+$theme: "default" !default;
+$color-scheme: "light" !default;
+
 $threshold: 50%; // contrast threshold
 
 // font sizes
@@ -89,6 +93,7 @@ $green: #00A651;
 $red: #CB122E;
 $yellow: #FFBB00;
 
+/*
 @if $theme == "flat" {
     $accent: #2C2F32;
     $secondary: $content-box-border-color;
@@ -96,6 +101,7 @@ $yellow: #FFBB00;
     $red: #E62845;
     $yellow: #FFC900;
 }
+*/
 
 $color-map: (
     "accent": $accent,

@@ -1,3 +1,10 @@
+@use 'config' as *;
+
+@use "mixins/responsiveness";
+@use "variables";
+
+@use 'mixins/temporary_bullshit_move_this_later';
+
 @use "sass:color";
 
 $button-padding-small: 0.5em 0.75em;
@@ -8,7 +15,7 @@ $button-padding-large: 0.75em 1.1em;
     padding: $button-padding-normal;
     text-align: center;
     color: white;
-    font-family: $font;
+    font-family: variables.$font;
     display: inline-block;
     cursor: pointer;
     text-decoration: none;
@@ -27,8 +34,8 @@ $button-padding-large: 0.75em 1.1em;
 }
 
 @mixin button-variant($value) {
-    $text-color: contrast-color($value, black, white);
-    $shadow-color: contrast-color($value, white, black);
+    $text-color: temporary_bullshit_move_this_later.contrast-color($value, black, white);
+    $shadow-color: temporary_bullshit_move_this_later.contrast-color($value, white, black);
     $border-color: color.adjust(color.adjust($value, $lightness: -8%), $hue: 2deg);
 
     @if $color-scheme == "dark" {
@@ -37,7 +44,7 @@ $button-padding-large: 0.75em 1.1em;
 
     @if $theme == "default" {
         border: 1px solid $border-color;
-        @if ($value == $secondary) {
+        @if ($value == variables.$secondary) {
             background-image: linear-gradient(
                 color.adjust($value, $lightness: 8%),
                 color.adjust(color.adjust($value, $lightness: -2%), $hue: -1deg)
@@ -85,7 +92,7 @@ $button-padding-large: 0.75em 1.1em;
 .button {
     @include button();
 
-    @each $color, $value in $color-map {
+    @each $color, $value in variables.$color-map {
         &.#{$color} {
             @include button-variant($value);
         }
@@ -101,7 +108,7 @@ $button-padding-large: 0.75em 1.1em;
     }
 
     &.toolbar {
-        @include button-variant($header-border);
+        @include button-variant(variables.$header-border);
     }
 
     &.button-caret {
@@ -123,7 +130,7 @@ $button-padding-large: 0.75em 1.1em;
     }
 
     &.small {
-        font-size: $font-size-small;
+        font-size: variables.$font-size-small;
         padding: $button-padding-small;
     }
 
@@ -133,15 +140,15 @@ $button-padding-large: 0.75em 1.1em;
     }
 
     &.button-login {
-        @include responsive('tiny') {
+        @include responsiveness.responsive('tiny') {
             width: 100%;
         }
 
-        @include responsive('small') {
+        @include responsiveness.responsive('small') {
             width: 100%;
         }
 
-        @include responsive('medium') {
+        @include responsiveness.responsive('medium') {
             width: inherit;
         }
     }
@@ -150,15 +157,15 @@ $button-padding-large: 0.75em 1.1em;
 input[type=file]::file-selector-button,
 input[type=file]::-webkit-file-upload-button {
     @include button();
-    @include button-variant($secondary);
+    @include button-variant(variables.$secondary);
 }
 
 #debug-button {
-    color: $text-color;
-    border-top: 1px solid $content-box-border-color;
-    border-left: 1px solid $content-box-border-color;
+    color: variables.$text-color;
+    border-top: 1px solid variables.$content-box-border-color;
+    border-left: 1px solid variables.$content-box-border-color;
     border-top-left-radius: 4px;
-    background: $content-box-background-color;
+    background: variables.$content-box-background-color;
     cursor: pointer;
     padding: 2px 8px;
     right: 0;

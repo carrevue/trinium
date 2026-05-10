@@ -1,9 +1,11 @@
+@use "variables";
+
 .post {
     margin: 1em 0;
     display: flex;
     gap: 0.8em;
 
-    border-bottom: 1px solid $content-box-border-color;
+    border-bottom: 1px solid variables.$content-box-border-color;
 
     &:last-child {
         margin-bottom: 0;
@@ -25,15 +27,15 @@
             gap: 0.25em;
 
             .comment-owner {
-                background: $content-box-border-color;
+                background: variables.$content-box-border-color;
                 border-radius: 4px;
                 padding: 0 2px;
             }
             
             .post-timestamp {
-                color: $text-color;
+                color: variables.$text-color;
                 opacity: 50%;
-                font-size: $font-size-smaller;
+                font-size: variables.$font-size-smaller;
             }
         }
 
@@ -53,8 +55,8 @@
             }
 
             .post-attachment {
-                border: 1px solid $content-box-border-color;
-                border-radius: $content-box-border-radius;
+                border: 1px solid variables.$content-box-border-color;
+                border-radius: variables.$content-box-border-radius;
 
                 width: 100%;
                 max-width: 510px;
@@ -71,7 +73,7 @@
 }
 
 .replies {
-    border-left: 1px solid $content-box-border-color;
+    border-left: 1px solid variables.$content-box-border-color;
     padding-left: 1em;
     margin-top: 1em;
 
@@ -94,7 +96,7 @@
     &:not(:only-child) {
         &:not(:only-of-type) {
             padding-bottom: 1em;
-            border-bottom: 1px solid $content-box-border-color;
+            border-bottom: 1px solid variables.$content-box-border-color;
         }
 
         // hide if
@@ -129,7 +131,7 @@
 }
 
 .action-button {
-    font-size: $font-size-smaller;
+    font-size: variables.$font-size-smaller;
     cursor: pointer;
 }
 
@@ -157,9 +159,9 @@
 }
 
 #new-comment-button, #new-post-button {
-    background: $form-bg-color;
-    color: $form-text-color;
-    border: 1px solid $form-border-color;
+    background: variables.$form-bg-color;
+    color: variables.$form-text-color;
+    border: 1px solid variables.$form-border-color;
     border-radius: 6px;
     padding: 0.5rem;
     width: 100%;
