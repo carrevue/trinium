@@ -73,42 +73,10 @@ body.login {
     }
 }
 
-// modified duplicate of col-version
-.col-login-info {
-    display: flex;
-    height: 100%;
-
-    @include responsiveness.responsive('tiny') {
-        flex-direction: column-reverse;
-
-        border-top: 1px solid variables.$content-box-border-color;
-        border-left: 0;
-        padding-left: 0;
-        margin-top: 1em;
-    }
-
-    @include responsiveness.responsive('medium') {
-        flex-direction: column;
-
-        border-top: 0;
-        border-left: 1px solid variables.$content-box-border-color;
-        padding-left: 2em;
-        margin-top: 0;
-    }
-}
-
 .login-currently-logged-in {
     display: flex;
-    gap: 1em;
+    gap: 0.75em;
     align-items: center;
-
-    .login-currently-logged-in-text {
-        //margin-bottom: 1em;
-    }
-
-    .login-currently-logged-in-other-accs {
-        font-size: variables.$font-size-small;
-    }
 
     .login-pfp {
         width: 50px;
