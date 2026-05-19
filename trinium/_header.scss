@@ -1,6 +1,7 @@
 @use 'config' as *;
 
 @use "mixins/responsiveness";
+@use "mixins/scrollbar";
 @use "variables";
 
 @mixin header-button-hover {
@@ -316,6 +317,11 @@
     border-radius: 0 0 8px 8px;
     min-width: 250px;
 
+    .user-menu-email {
+        padding: variables.$menu-item-padding;
+        opacity: 0.5;
+    }
+
     .user-menu-intro {
         padding: variables.$menu-item-padding;
 
@@ -346,6 +352,12 @@
                 overflow: hidden;
             }
         }
+    }
+
+    .user-switcher {
+        max-height: 300px;
+        overflow-x: hidden;
+        @include scrollbar.scrollbar();
     }
 }
 
