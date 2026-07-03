@@ -170,11 +170,8 @@
                 height: variables.$header-pfp-width;
             }
 
-            .user-menu-caret-container {
-                display: inline-block;
-                opacity: variables.$header-link-inactive-opacity;
-                width: 16px;
-                height: 16px;
+            .menu-caret-container {
+                opacity: 1;
             }
 
             .menu-button-text {
