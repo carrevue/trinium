@@ -7,7 +7,7 @@ $columns: 12;
 $gap: 1em;
 
 @mixin create-selectors($breakpoint: null) {
-    $infix: if($breakpoint ==null, '', '-#{$breakpoint}');
+    $infix: if(sass($breakpoint == null): ""; else: "-#{$breakpoint}");
 
     @for $i from 1 through $columns {
         .col#{$infix}-#{$i} {
