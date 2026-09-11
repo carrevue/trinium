@@ -1,7 +1,11 @@
+@use "../variables";
+
 @use "sass:color";
 
 @function contrast-color($color, $dark, $light) {
-    $threshold: 50;
-    $lightness: color.channel($color, "lightness", $space: hsl);
-    @return if($lightness < $threshold, $light, $dark);
+    $luminance: color.channel($color, "red", $space: rgb) * 0.2126
+        + color.channel($color, "green", $space: rgb) * 0.7152
+        + color.channel($color, "blue", $space: rgb) * 0.0722;
+
+    @return if($luminance > 179, $dark, $light);
 }

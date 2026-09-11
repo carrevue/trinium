@@ -2,8 +2,6 @@
 $theme: "default" !default;
 $color-scheme: "light" !default;
 
-$threshold: 50%; // contrast threshold
-
 // font sizes
 $font-size-huge: 20px;
 $font-size-bigger: 16px;
@@ -43,18 +41,13 @@ $bg-color: #F2F2F2;
 
 @if $theme == "flat" {
     $bg-color: #FFFFFF;
-    $text-color: #2C2F32;
-    $link-color: #0087FE;
+    $link-color: #008AFF;
 }
 
 @if $color-scheme == "dark" {
     $text-color: white;
     $link-color: #2d89e8;
     $bg-color: #0a0a0a;
-
-    @if $theme == "flat" {
-        $bg-color: #010103;
-    }
 }
 
 // content boxes
@@ -62,7 +55,7 @@ $content-box-background-color: #FFF;
 $content-box-border-color: #E0E0E0;
 
 @if $theme == "flat" {
-    $content-box-border-color: #E2E5E7;
+    $content-box-border-color: #d1d6d9;
 }
 
 @if $color-scheme == "dark" {
@@ -87,25 +80,22 @@ $content-box-grid-entry-height: 220px;
 $content-box-grid-entry-width: 135px;
 
 // component colors
-$accent: #0069B4;
+$accent: $link-color;
 $secondary: $content-box-border-color;
-$green: #00A651;
-$red: #CB122E;
-$yellow: #FFBB00;
+$green: #28A828;
+$red: #CB2112;
+$yellow: #FFC219;
 
-/*
 @if $theme == "flat" {
-    $accent: #2C2F32;
     $secondary: $content-box-border-color;
-    $green: #00A651;
-    $red: #E62845;
-    $yellow: #FFC900;
+    $green: #00B44F;
+    $red: #FB003E;
+    $yellow: #FFC600;
 }
-*/
 
 $color-map: (
     "accent": $accent,
-    "secondary": $content-box-border-color,
+    "secondary": $secondary,
     "success": $green,
     "danger": $red,
     "warning": $yellow,

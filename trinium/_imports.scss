@@ -19,6 +19,10 @@ $color-scheme: "light" !default;
 @use 'page';
 @use 'grid_system';
 
+@if $theme == "flat" {
+    @import url('https://rsms.me/inter/inter.css');
+}
+
 // misc unorganized shit
 :root {
     font-family: variables.$font;
@@ -278,6 +282,13 @@ ul.unstyled-list {
             border-color: var(--link-color) !important;
         }
     }
+}
+
+.display-message {
+  text-align: center;
+  font-size: variables.$font-size-big;
+  opacity: 50%;
+  padding: 1em;
 }
 
 @include meta.load-css('alerts');
