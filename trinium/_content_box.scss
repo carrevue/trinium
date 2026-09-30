@@ -6,19 +6,19 @@
 
 @mixin content-box-small-max-widths {
     @include responsiveness.responsive('tiny') {
-        max-width: 140px;
+        max-width: 160px;
     }
 
     @include responsiveness.responsive('small') {
-        max-width: 120px;
+        max-width: 160px;
     }
 
     @include responsiveness.responsive('medium') {
-        max-width: 120px;
+        max-width: 140px;
     }
 
     @include responsiveness.responsive('large') {
-        max-width: 140px;
+        max-width: 160px;
     }
 
     @include responsiveness.responsive('huge') {
@@ -59,39 +59,11 @@
     }
 
     @include responsiveness.responsive('medium') {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
 
     @include responsiveness.responsive('large') {
         grid-template-columns: repeat(4, 1fr);
-    }
-
-    &.content-grid-uploads {
-        grid-auto-rows: minmax(auto, auto);
-
-        @include responsiveness.responsive('tiny') {
-            // fucking stupid
-            grid-template-columns: repeat(1, 1fr);
-        }
-
-        @include responsiveness.responsive('small') {
-            // ditto
-            grid-template-columns: repeat(1, 1fr);
-        }
-
-        @include responsiveness.responsive('medium') {
-            grid-template-columns: repeat(2, 1fr);
-        }
-
-        @include responsiveness.responsive('large') {
-            grid-template-columns: repeat(2, 1fr);
-        }
-
-        .content-entry,
-        .content-entry:first-child {
-            border: none;
-            padding: 0.5em 0;
-        }
     }
 
     &.content-grid-users {
@@ -119,13 +91,6 @@
             padding: 0.5em 0;
         }
     }
-}
-
-.content-header {
-    background: variables.$content-box-border-color;
-    padding: 0.3em 0.5em;
-    color: variables.$text-color;
-    font-weight: 700;
 }
 
 .content-box {
@@ -370,7 +335,6 @@
         }
 
         .content-image-container {
-            /* Thumbnails used by grid thumbnails */
             display: table;
             text-align: center;
             margin: auto;
@@ -382,7 +346,6 @@
 
                 .content-image {
                     max-height: variables.$content-box-grid-entry-width;
-                    margin: 2px auto;
                     @include content-box-small-max-widths;
 
                     &:hover {
